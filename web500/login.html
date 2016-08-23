@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>登录</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+        <script src="js/jquery-2.2.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <style>
+            .container{
+                max-width: 400px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h2>登录</h2>
+        <form method="POST" action="login.php">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" type="text" name="username" placeholder="username" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password" placeholder="password" />
+            </div>
+            <input type="submit" name="submit" class="btn btn-primary btn-block" value="登录" />
+        </form>
+        </div>
+    </body>
