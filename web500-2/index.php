@@ -24,7 +24,6 @@ $_GET=d_addslashes($_GET);
 
 include_once('common.php');
 
-
 if(!isset($_GET['action'])||!isset($_GET['mode'])){
 
     header("Location: ./index.php?action=front&mode=login");
