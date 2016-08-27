@@ -9,6 +9,8 @@ if (!isset($_POST['username']) or !isset($_POST['password'])){
   $sql = "select count(*) from t_user where username = '$name' and password='$pwd'";
   $result = mysql_query($sql);
   $row = mysql_fetch_array($result);
+  var_dump($row);
+  
   if ($row[0]){
     set_login($name);
     header("Location: ./route.php?m=user");
@@ -19,6 +21,7 @@ if (!isset($_POST['username']) or !isset($_POST['password'])){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -70,7 +73,7 @@ if (!isset($_POST['username']) or !isset($_POST['password'])){
       <div class="am-cf">
         <input type="submit" name="" value="开 车" class="am-btn am-btn-primary am-btn-sm am-fl">
         <li class="am-btn am-btn-default am-btn-sm am-fr"><a href="route.php?m=register">没有票 ^_^?</a></li>
-
+        
       </div>
     </form>
     <hr>

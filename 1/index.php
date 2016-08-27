@@ -1,6 +1,16 @@
 <?php
 include "common.php";
 
+
+$connect=mysql_connect("127.0.0.1","root","i0ve*ctf") or die("connect to db error!");
+mysql_select_db("taolu") or die("select db  error!");
+
+
+
+$connect=mysql_connect("127.0.0.1","root","i0ve*ctf") or die("connect to db error!");
+mysql_select_db("taolu") or die("select db  error!");
+
+
 if (isset($_POST["name"])){
   $name = str_replace("'", "", trim($_POST["name"]));
   if (strlen($name) > 10){
