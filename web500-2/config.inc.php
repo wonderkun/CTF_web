@@ -1,14 +1,12 @@
 <?php
 
-
-
 error_reporting(0);
 
 session_start();
 
 $servername = "localhost";
 $username = "root";
-$password = "i0ve*ctf";
+$password = "root";
 $database="taolu";
 
 // 创建连接
