@@ -17,7 +17,6 @@ create table `note` (
      `userid`  int(11) not null 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
 
-
 drop table  if exists `page` ;
 
 create table `page` (
@@ -32,13 +31,6 @@ create table `flags` (
       `id` tinyint not null primary key ,
       `flag` varchar(50) not null 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-insert into `flags` (zid,flag) values (1,'CTF{945ad55928c3e9773c7y3cf2cf02cdbd}');
-
-insert into  `user`(id,uname,password,level)values(
-
-     1,'admin','21232f297a57a5a743894aoe4a801fc3',1
-),(2,'test','202cb962ac59075b964b07152d234b70',0);
 
 
 insert into  `page` values (20);
