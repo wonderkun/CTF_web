@@ -41,8 +41,8 @@ if(!isset($_SESSION['userid'])){
 
 function mysql_my_query($sql){
         global $conn;
-        $res=$conn->query($sql) or die("查询数据库出错!".mysqli_error($conn));
-
+        $res=$conn->query($sql) or die("查询数据库出错!");
+        
         return $res;
         
 }
