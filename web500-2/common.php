@@ -108,6 +108,13 @@ function get_page_size(){
       return $row['num'];
 }
 
+function set_page_size(){
+    
+    $sql="update page set num=20";
+    $res=mysql_my_query($sql);
+    
+}
+
 function get_uname($userid){
        
        $sql="select uname from user where id='$userid'";

@@ -1,5 +1,7 @@
 
 CREATE DATABASE `taolu` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+use `taolu`;
+
 drop table if exists `user`;
 create table `user`(
     `id` int(11) not null primary  key  auto_increment,
@@ -21,7 +23,7 @@ create table `note` (
 drop table  if exists `page` ;
 
 create table `page` (
-    `num` varchar not null
+    `num` varchar(255)  not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -33,7 +35,7 @@ create table `flags` (
       `flag` varchar(50) not null 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into `flags` (zid,flag) values (1,'CTF{945ad55928c3e9773c7y3cf2cf02cdbd}');
+insert into `flags` (id,flag) values (1,'CTF{945ad55928c3e9773c7y3cf2cf02cdbd}');
 
 insert into  `user`(id,uname,password,level)values(
 

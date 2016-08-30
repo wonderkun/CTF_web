@@ -17,7 +17,7 @@ if($userid!==false&&$level!==false){
           }
           if($page<1) $page=1;
 
-          $sql="update page set num='$page'";
+          $sql="update page set num=$page";
           $res=mysql_my_query($sql);
           if($res){
                 echo "<script>alert('update  success!');</script>";
@@ -33,10 +33,8 @@ if($userid!==false&&$level!==false){
     echo "<script>alert('not login!');</script>";
     echo("<script>location.href='./index.php?action=admin&mode=login'</script>");
     die();
-    
     // $result=mysql_my_query($sql);
 }
-
 
 ?>
 

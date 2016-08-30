@@ -7,15 +7,16 @@ $userid=check_login();
 $level=get_level();
 
 if($userid!==false&&$level!==false){
-
+  
     $page_size=get_page_size();
-
     //默认仅仅显示 前$page_size条数据 
     $sql="select * from note  limit 0,".$page_size;
     $result=mysql_my_query($sql);
 
-}else{
+    set_page_size(); #设置default page size 
 
+}else{
+    
     echo "<script>alert('not login!');</script>";
     echo("<script>location.href='./index.php?action=admin&mode=login'</script>");
     die();
@@ -99,3 +100,4 @@ if($userid!==false&&$level!==false){
 </div>
 </body>
 </html>
+
