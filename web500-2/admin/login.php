@@ -17,7 +17,9 @@ if(isset($_POST['uname'])&&isset($_POST['password'])&&isset($_POST['TOKEN'])){
     $row=$res->fetch_assoc(); //获取第一条记录
 
     if($row['id']){
+        
         set_login($uname,$row['id'],$row['level']);
+        
         header("Location: ./index.php?action=admin&mode=index");
         exit();
     }else{
