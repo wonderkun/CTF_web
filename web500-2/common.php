@@ -120,6 +120,6 @@ function get_uname($userid){
        $sql="select uname from user where id='$userid'";
        $res=mysql_my_query($sql);
        $row=$res->fetch_assoc();
-      return $row['uname'];
-
+      return  htmlspecialchars($row['uname']);
+      
 }

