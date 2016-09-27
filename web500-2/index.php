@@ -41,5 +41,3 @@ if(!isset($_GET['action'])||!isset($_GET['mode'])){
 }
 
 include($file);
-
-// include('php://filter/read=convert.base64-encode/resource=./index.php');
