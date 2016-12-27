@@ -1,13 +1,9 @@
 <?php
-// error_reporting(0);
+error_reporting(0);
 
 include_once("flag.php");
 
 $cookie = $_COOKIE['ISecer'];
-
-
-var_dump("$key");
-var_dump($key);
 
 if(isset($_GET['hint'])){
 	show_source(__FILE__);
