@@ -23,7 +23,7 @@ RUN chown -R www-data:www-data /usr/share/nginx/html/
 
 
 WORKDIR /tmp  
-COPY  ./start.sh  /tmp/ 
+COPY  ./start.sh  /tmp/
 
 RUN  chmod a+x start.sh 
 EXPOSE 80 3306 
