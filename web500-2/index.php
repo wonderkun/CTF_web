@@ -11,7 +11,7 @@ function d_addslashes($array){
               $array[$key]=$value;
         }else{
 
-          return  d_addslashes($array[$key]);
+          $array[$key] = d_addslashes($array[$key]);
         }
     }
     return $array;
