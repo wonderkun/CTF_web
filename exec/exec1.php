@@ -41,11 +41,6 @@
 	// Feedback for the end user
 	echo  "<pre>{$cmd}</pre>";
 
-
-
-//猥琐的%0a, 127.0.0.1%0awhoami
-
-
 //`echo "bHMgLw==" | base64 -d`  对于任意命令执行不可用的字符,可以这样绕过
 
 ?>
