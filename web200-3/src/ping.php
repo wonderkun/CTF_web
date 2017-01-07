@@ -56,9 +56,8 @@
     if(!$_SESSION['username']||!$_SESSION['status']){
         die("<script>alert('请登陆!!')</script>") ;
     }
-	
-    echo "flag{7246d06e237829198edbda64eb4770a1}"; //部署时重新设定
 
+    echo "flag{7246d06e237829198edbda64eb4770a1}"; //部署时重新设定
 
     $_POST = d_addslashes($_POST);
     $_GET =  d_addslashes($_GET);
@@ -74,7 +73,19 @@
     if(!preg_match("/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/i",$ip)){
           die("ip 格式错误!!");
     }
-    
+    $substitutions = array(
+		'&'  => '',
+		';' => '',
+		'|' => '',
+		'-'  => '',
+		'$'  => '',
+		'('  => '',
+		')'  => '',
+		'`'  => '',
+		'||' => '',
+ 	);
+   $ip = str_replace( array_keys( $substitutions ), $substitutions, $ip );
+   
     if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
     		// Windows
     		$cmd = shell_exec( 'ping  ' . $ip );

@@ -10,5 +10,4 @@ iptables   -t filter -A OUTPUT -p tcp --tcp-flags ALL SYN  -j DROP
 iptables  -t filter  -A OUTPUT -p upd  -j DROP 
 
 
-
 /usr/bin/tail -f /dev/null

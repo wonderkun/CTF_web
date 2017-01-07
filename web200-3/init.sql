@@ -10,13 +10,14 @@ create table `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREAte TABLE `flag`(
-
       `flag` varchar(40)
 
-)
+);
 
-insert into `users` (id,username,password) values (1,'admin','fcb719025126a5a743d525dacd6724d4');  -- 设置此hash,需为无法破解的  
-insert into   `flag` values ('flag{d15443798b35face458a88dc9561eaa7}') ;  -- 部署时重新设置flag  
+insert into `users` (id,username,password) values (1,'admin','fcb719025126a5a743d525dacd6724d4');    
+insert into   `flag` values ('flag{d15443798b35face458a88dc9561eaa7}') ; 
+
+
 
 
 
