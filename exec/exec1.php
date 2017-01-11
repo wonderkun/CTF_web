@@ -1,12 +1,10 @@
 <?php
 
 	// Get input
-	
 
 	$target = $_REQUEST[ 'ip' ];
     // var_dump($target);
 	$target=trim($target);
-
 	// var_dump($target);
 	// Set blacklist
 	$substitutions = array(
@@ -40,7 +38,6 @@
 
 	// Feedback for the end user
 	echo  "<pre>{$cmd}</pre>";
-
-//`echo "bHMgLw==" | base64 -d`  对于任意命令执行不可用的字符,可以这样绕过
+	
 
 ?>

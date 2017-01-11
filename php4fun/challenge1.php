@@ -1,7 +1,7 @@
 <?php 
 
 #GOAL: get password from admin;
-error_reporting(0);
+// error_reporting(0);
 require 'db.inc.php';
    
 function clean($str){
@@ -13,7 +13,7 @@ function clean($str){
    
 $username = @clean((string)$_GET['username']);
 $password = @clean((string)$_GET['password']);
-   
+
 $query='SELECT * FROM users WHERE name=\''.$username.'\' AND pass=\''.$password.'\';';
 
 $result=mysql_query($query);
