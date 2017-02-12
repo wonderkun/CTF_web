@@ -17,6 +17,7 @@ $password = @clean((string)$_GET['password']);
 $query='SELECT * FROM users WHERE name=\''.$username.'\' AND pass=\''.$password.'\';';
 
 $result=mysql_query($query);
+
 if(!$result || mysql_num_rows($result) < 1){
     die('Invalid password!');
 }
