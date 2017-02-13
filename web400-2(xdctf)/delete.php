@@ -10,13 +10,13 @@ require_once "common.inc.php";
 
 if(isset($req['filename'])) {
     $result = $db->query("select * from `file` where `filename`='{$req['filename']}'");
-    if ($result) {
-        $result = $result->fetch();
+    if ($result->num_rows>0){
+        $result = $result->fetch_assoc();
     }
 
     $filename = UPLOAD_DIR . $result["filename"] . $result["extension"];
     if ($result && file_exists($filename)) {
-        $db->exec('delete from `file` where `fid`=' . $result["fid"]);
+        $db->query('delete from `file` where `fid`=' . $result["fid"]);
         unlink($filename);
         redirect("/");
     }

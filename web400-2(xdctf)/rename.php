@@ -10,26 +10,22 @@ require_once "common.inc.php";
 
 if(isset($req['oldname']) && isset($req['newname'])) {
     $result = $db->query("select * from `file` where `filename`='{$req['oldname']}'");
-    if ($result) {
-        $result = $result->fetch();
-    }
-
-
-    if(!$result) {
+    if ($result->num_rows>0) {
+        $result = $result->fetch_assoc();
+    }else{
         exit("old file doesn't exists!");
-    } else {
-
+    }
+    
+    if($result) {
+        
         $req['newname'] = basename($req['newname']);
-        $re = $db->exec("update `file` set
-                    `filename`='{$req['newname']}',
-                    `oldname`='{$result['filename']}'
-                    where `fid`={$result['fid']}");
+        $re = $db->query("update `file` set `filename`='{$req['newname']}', `oldname`='{$result['filename']}' where `fid`={$result['fid']}");
         if(!$re) {
             print_r($db->errorInfo());
             exit;
         }
-        $oldname = UPLOAD_DIR . $result["filename"] . $result["extension"];
-        $newname = UPLOAD_DIR . $req["newname"] . $result["extension"];
+        $oldname = UPLOAD_DIR . $result["filename"].$result["extension"];
+        $newname = UPLOAD_DIR . $req["newname"].$result["extension"];
         if(file_exists($oldname)) {
             rename($oldname, $newname);
         }

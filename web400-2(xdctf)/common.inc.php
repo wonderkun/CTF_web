@@ -6,16 +6,16 @@
  * Time: 下午7:58
  */
 
+
 $DATABASE = array(
     
-    "dsl" => "mysql:host=localhost;dbname=xdctf",
+    "host" => "localhost",
     "username" => "root",
-    "password" => "root"
-
+    "password" => "123456",
+    "dbname" =>"xdctf"
 );
 
-$db = new PDO($DATABASE["dsl"], $DATABASE["username"], $DATABASE["password"]);
-
+$db = new mysqli($DATABASE['host'],$DATABASE['username'],$DATABASE['password'],$DATABASE['dbname']);
 $req = array();
 
 foreach(array($_GET, $_POST, $_COOKIE) as $global_var) {

@@ -21,21 +21,21 @@ if($_FILES)
         $path_parts["extension"] = "." . $path_parts["extension"];
 
         $name = $path_parts["filename"] . $path_parts["extension"];
-        $path_parts["filename"] = $db->quote($path_parts["filename"]);
+        
+        $path_parts['filename'] = addslashes($path_parts['filename']);
 
-        $fetch = $db->query("select * from `file` where
-        `filename`={$path_parts['filename']}
-        and `extension`={$path_parts['extension']}");
-        if($fetch && $fetch->fetchAll()) {
+        $sql = "select * from `file` where `filename`='{$path_parts['filename']}' and `extension`='{$path_parts['extension']}'";
+        $fetch = $db->query($sql);
+        if($fetch->num_rows>0) {
             exit("file is exists");
         }
 
         if(move_uploaded_file($file["tmp_name"], UPLOAD_DIR . $name)) {
-            $re = $db->exec("insert into `file`
-                  ( `filename`, `view`, `extension`) values
-                  ( {$path_parts['filename']}, 0, '{$path_parts['extension']}')");
+
+            $sql = "insert into `file` ( `filename`, `view`, `extension`) values( '{$path_parts['filename']}', 0, '{$path_parts['extension']}')";
+            $re = $db->query($sql);
             if(!$re) {
-                print_r($db->errorInfo());
+                print_r($db->error);
                 exit;
             }
             $url = "/" . UPLOAD_DIR . $name;
