@@ -1,7 +1,7 @@
 
 
 ### writeup 
-次题目出的真好,硬生生的增长我这菜鸟的一波姿势.
+此题目出的真好,硬生生的增长我这菜鸟的一波姿势.
 [官方的writeup](http://bobao.360.cn/ctf/detail/173.html)
 
 首先在公共文件 common.php中发现了一个变量覆盖漏洞:
