@@ -1,8 +1,8 @@
 <?php 
 $dbhost="localhost";
 
-$dbuser="admin";
-$dbpasswd="password";
+$dbuser="root";
+$dbpasswd="123456";
 $db="npusec";
 
 $conn=mysqli_connect($dbhost,$dbuser,$dbpasswd,$db) or die ("数据库连接出错");
