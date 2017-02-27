@@ -47,31 +47,21 @@
       </div>
     </form>
     <hr>
-    
+
 	<?php
     include('config.php');
     session_start();
     error_reporting(0);
-
     if(!$_SESSION['username']||!$_SESSION['status']){
         die("<script>alert('请登陆!!')</script>") ;
     }
 
     echo "flag{7246d06e237829198edbda64eb4770a1}"; //部署时重新设定
 
-    $_POST = d_addslashes($_POST);
-    $_GET =  d_addslashes($_GET);
-
     $ip=isset($_POST['ip'])?$_POST['ip']:die();
-
-    // 为了增加难度,设置Docker容器不能向外部发送请求,不允许下载shell  
-    
-    // sudo iptables   -t filter -A OUTPUT -p tcp --tcp-flags ALL SYN  -j DROP  
-    // sudo iptables  -t filter  -A OUTPUT -p upd  -j DROP 
-
-
+    // $ip =isset($_GET['ip'])?$_GET['ip']:die();
     if(!preg_match("/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/i",$ip)){
-          die("ip 格式错误!!");
+          die("<pre>ip 格式错误!!</pre>");
     }
     $substitutions = array(
 		'&'  => '',
@@ -83,7 +73,12 @@
 		'||' => '',
  	);
    $ip = str_replace( array_keys( $substitutions ), $substitutions, $ip );
-   
+  //  echo strlen($ip)."</br>";
+  //  echo $ip;
+   if(strlen($ip)<7||strlen($ip)>15){
+       die("<pre>ip 长度错误!</pre>");
+   }
+
     if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
     		// Windows
     		$cmd = shell_exec( 'ping  ' . $ip );
@@ -99,5 +94,3 @@
 </div>
 </body>
 </html>
-
-
