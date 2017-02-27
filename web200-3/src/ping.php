@@ -53,9 +53,9 @@
     session_start();
     error_reporting(0);
     if(!$_SESSION['username']||!$_SESSION['status']){
-        die("<script>alert('请登陆!!')</script>") ;
-    }
 
+        die("<script>alert('请登陆!!');window.location.href='./';</script>") ;
+    }
     echo "flag{7246d06e237829198edbda64eb4770a1}"; //部署时重新设定
 
     $ip=isset($_POST['ip'])?$_POST['ip']:die();
