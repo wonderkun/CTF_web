@@ -70,7 +70,7 @@
 
 
 
-<?php 
+<?php
 session_start();
 error_reporting(0);
 
@@ -86,17 +86,17 @@ $sql="select password from users  where username='$username'";
 $result = $conn->query($sql);
 
 if(!$result){
-    die('对不起没有此用户!');
+    die('<script>alert("用户名或密码错误!!")</script>');
 }
 
 $row = $result->fetch_assoc();
-if($row[0]===$password){
+if($row[0] == $password){
     $_SESSION['username']=$username;
     $_SESSION['status']=1;
     header("Location:./ping.php");
-    
+
 }else{
-    
+
    die("<script>alert('用户名或密码错误!!')</script>");
 }
 
