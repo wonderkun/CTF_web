@@ -1,0 +1,2 @@
+<?php
+$option='$option=';phpinfo();';';
