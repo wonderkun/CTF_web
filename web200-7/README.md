@@ -47,7 +47,7 @@ phpinfo();//';
 #### 方法二,利用 preg_replace函数的问题:
 preg_replace函数在处理字符串的时候,会自动对第二个参数的 \ 这个字符进行反转移.
 具体为啥要这样干,我也不太懂.
-也就是说如果字符串是 "\\\'",经过 preg_replace()的处理,就变为 "\\'",单引号就逃出来了.
+也就是说如果字符串是 ```\\\'```,经过 preg_replace()的处理,就变为 ```\\'```,单引号就逃出来了.
 所以payload如下:
 ```
 http://127.0.0.1/index.php?option=a\';phpinfo();//
@@ -57,7 +57,7 @@ config.php变为:
 <?php
 $option='a\\';phpinfo();//';
 ```
-道理就是  a\';phpinfo();//  经过 addslashes()处理之后,变为a\\\';phpinfo();// 然后两个反斜杠被preg_replace变成了一个,导致单引号逃脱.
+道理就是  ```a\';phpinfo();//```  经过 addslashes()处理之后,变为```a\\\';phpinfo();//``` 然后两个反斜杠被preg_replace变成了一个,导致单引号逃脱.
 
 #### 利用 preg_replace() 函数的第二个参数的问题
 先看官方对preg_replace()函数的描述[manual](http://php.net/manual/zh/function.preg-replace.php)
