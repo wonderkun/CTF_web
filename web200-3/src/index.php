@@ -62,7 +62,7 @@
       </div>
     </form>
     <hr>
-    <p>© 2017 NPUSC.</p>
+    <p>© 2017 NPUSEC.</p>
   </div>
 </div>
 </body>
