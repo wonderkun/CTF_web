@@ -62,7 +62,7 @@
       </div>
     </form>
     <hr>
-    <p>© 2016 NPUSC.</p>
+    <p>© 2017 NPUSC.</p>
   </div>
 </div>
 </body>
@@ -77,6 +77,21 @@ error_reporting(0);
 include("config.php");
 
 header("Content-Type:text/html;charset=utf-8");
+
+function d_addslashes($array){
+
+    foreach($array as $key=>$value){
+        if(!is_array($value)){
+              !get_magic_quotes_gpc()&&$value=addslashes($value);
+              $array[$key]=$value;
+        }else{
+
+          $array[$key]=d_addslashes($array[$key]);
+        }
+    }
+    return $array;
+
+}
 
 $_POST = d_addslashes($_POST);
 $_GET =  d_addslashes($_GET);

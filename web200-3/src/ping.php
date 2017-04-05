@@ -78,6 +78,10 @@
    if(strlen($ip)<7||strlen($ip)>15){
        die("<pre>ip 长度错误!</pre>");
    }
+    $dir = 'sandBox/'.$_SERVER['REMOTE_ADDR'];
+    if(!file_exists($dir)) mkdir($dir);
+    
+    chdir($dir);
 
     if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
     		// Windows
@@ -89,7 +93,7 @@
     	// Feedback for the end user
     	echo  "<pre>$cmd</pre>";
     ?>
-    <p>© 2016 NPUSC.</p>
+    <p>© 2017 NPUSC.</p>
   </div>
 </div>
 </body>
