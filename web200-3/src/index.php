@@ -105,11 +105,12 @@ if(!$result){
 }
 
 $row = $result->fetch_assoc();
-if($row[0] == $password){
+
+if($row[0] === $password){
     $_SESSION['username']=$username;
     $_SESSION['status']=1;
     header("Location:./ping.php");
-
+    
 }else{
 
    die("<script>alert('用户名或密码错误!!')</script>");

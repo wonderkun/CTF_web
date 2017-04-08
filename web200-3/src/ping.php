@@ -70,7 +70,7 @@
 		'('  => '',
 		')'  => '',
 		'`'  => '',
-		'||' => '',
+		'|' => '',
  	);
    $ip = str_replace( array_keys( $substitutions ), $substitutions, $ip );
   //  echo strlen($ip)."</br>";
@@ -80,8 +80,16 @@
    }
     $dir = 'sandBox/'.$_SERVER['REMOTE_ADDR'];
     if(!file_exists($dir)) mkdir($dir);
-    
     chdir($dir);
+    
+    $comments = <<<INFO
+   <!--
+      \$dir = 'sandBox/'.\$_SERVER['REMOTE_ADDR'];
+    if(!file_exists(\$dir)) mkdir(\$dir);
+    chdir(\$dir);  
+   -->
+INFO;
+    echo $comments;
 
     if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
     		// Windows
