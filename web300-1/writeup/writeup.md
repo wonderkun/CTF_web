@@ -155,3 +155,9 @@ echo "\n";
 获取$iv = 6f39784745597a644b52354a50497976
 然后解密:backup.txt的内容:
 得到flag: flag{660b7b8c06e3150d174a3ec9fcd7ab9d}
+
+
+
+### 别的解题思路的wp
+- [ ] [chamd5安全团队](http://mp.weixin.qq.com/s?__biz=MzIzMTc1MjExOQ==&mid=2247483908&idx=1&sn=66a6fb3bdd5bc391791db02f0ced5456&chksm=e89e2adcdfe9a3ca236b95c00a7362bfd3908d3ef69a207efd544e1c9dcc385f5d767605d921&mpshare=1&scene=23&srcid=0417hAKjzBELkY81prwMPZO9#rd)
+- [ ] [墨麒麟安全实验](http://www.ifuryst.com/archives/AES_CFB_Attack.html)
