@@ -18,7 +18,6 @@ if(isset($_POST['uname'])&&isset($_POST['password'])&&isset($_POST['TOKEN'])){
 
     if($row['id']){
         echo $row['level'];
-
         set_login($uname,$row['id'],$row['level']);
         header("Location: ./index.php?action=front&mode=index");
         exit();
@@ -94,5 +93,3 @@ if(isset($_POST['uname'])&&isset($_POST['password'])&&isset($_POST['TOKEN'])){
 </div>
 </body>
 </html>
-
-

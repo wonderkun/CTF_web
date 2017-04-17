@@ -74,7 +74,7 @@ else {
     else {
       echo "这个用户好像没有注册";
     }
-
+    
   }
   else {
     pform();
