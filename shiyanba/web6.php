@@ -2,7 +2,8 @@
 <?php
 session_start(); 
 
-$flag="test";
+$flag="{this_is_flag}";
+
 
 if (isset ($_GET['password'])) {
     if ($_GET['password'] == $_SESSION['password'])
@@ -12,5 +13,6 @@ if (isset ($_GET['password'])) {
 }
 
 mt_srand((microtime() ^ rand(1, 10000)) % rand(1, 10000) + rand(1, 10000));
+$_SESSION['password'] = mt_rand(); 
 
 ?>

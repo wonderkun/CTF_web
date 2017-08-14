@@ -1,20 +1,15 @@
 <?php
+$username  = "this_is_secret"; 
+$password  = "this_is_not_known_to_you"; 
+$flag = "{this_is_flag}"; 
 
-// $unserialize_str = $_POST['password']; $data_unserialize = unserialize($unserialize_str); if($data_unserialize['user'] == '???' && $data_unserialize['pass']=='???') { print_r($flag); }
+$info = isset($_GET['info'])? $_GET['info']: "" ;
+$data_unserialize = unserialize($info);
+if ($data_unserialize['username']==$username&&$data_unserialize['password']==$password){
+    echo $flag;
+}else{
+    echo "username or password error!";
 
-$password=array(
-    "user"=>TRUE,
-    "pass"=>TRUE,
-);
- 
-$password=serialize($password);
- 
-
-$data_unserialize = unserialize($password);
-
-if ($data_unserialize['user']=="dsdsdds"){
-    echo "sucess";
-    
 }
 
 ?>

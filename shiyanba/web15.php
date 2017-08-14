@@ -10,7 +10,7 @@ $password = $_POST["password"];
 if (!empty($_COOKIE["getmein"])) {
 
     if (urldecode($username) === "admin" && urldecode($password) != "admin") {
-        if ($COOKIE["getmein"] === md5($secret . urldecode($username . $password))) {
+        if ($_COOKIE["getmein"] === md5($secret . urldecode($username . $password))) {
             echo "Congratulations! You are a registered user.\n";
             die ("The flag is ". $flag);
         }

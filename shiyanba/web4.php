@@ -1,5 +1,6 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
+$flag = "{this_is_flag}";
 
 if (isset ($_GET['password'])) {
      

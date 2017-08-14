@@ -4,6 +4,7 @@
 
 
 
+$flag = "{this_is_flag}"; 
 
 if (isset($_GET['a'])) {  
     if (strcmp($_GET['a'], $flag) == 0)  

@@ -3,6 +3,8 @@
 $he ='goodluck';
 
 $he="goodluck";
+$flag = "{this_is_flag}"; 
+
 
 parse_str($_GET['heetian']);
 
@@ -11,5 +13,4 @@ if ($he =="abcd"){
 
 }
 
-#heetian=1%26he=abcd
-//利用了  parse_str()的漏洞
+#

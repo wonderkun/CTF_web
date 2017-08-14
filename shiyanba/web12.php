@@ -5,7 +5,7 @@ if(!empty($_SERVER["HTTP_CLIENT_IP"]))
 	$cip = $_SERVER["HTTP_CLIENT_IP"];
 else if(!empty($_SERVER["HTTP_X_FORWARDED_FOR"]))
 	$cip = $_SERVER["HTTP_X_FORWARDED_FOR"];
-else if(!empty($_SERVER["REMOTE_ADDR    "]))
+else if(!empty($_SERVER["REMOTE_ADDR"]))
 	$cip = $_SERVER["REMOTE_ADDR"];
 else
 	$cip = "0.0.0.0";
@@ -16,7 +16,7 @@ $GetIPs = GetIP();
 echo $GetIPs;
 
 if ($GetIPs=="1.1.1.1"){
-    
+	  
 echo "Great! Key is *********";
 }
 else{

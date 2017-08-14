@@ -4,12 +4,11 @@
 echo '<html><head><meta http-equiv="charset" content="gbk"></head><body>'; 
 
 $URL = $_SERVER['REQUEST_URI'];
-// echo $URL;
  
-//echo 'URL: '.$URL.'<br/>'; 
-$flag = "CTF{???}"; 
+// echo 'URL: '.$URL.'<br/>'; 
+$flag = "CTF{this_is_flag}"; 
 
-$code = str_replace($flag, 'CTF{???}', file_get_contents('./index.php')); 
+$code = str_replace($flag, 'CTF{???}', file_get_contents('./web1.php')); 
 $stop = 0; 
 
 //这道题目本身也有教学的目的 
@@ -30,16 +29,16 @@ if($flag && strpos($URL, '\\') !== FALSE){
 //第三，有的系统大小写通用，例如 indirectioN/ 
 //你也可以用?和#等等的字符绕过，这需要统一解决 
 //所以，第三个要求对可以用的字符做了限制，a-z / 和 . 
-// $matches = array(); 
+$matches = array(); 
 
-// preg_match('/^([a-z\/.]+)$/', $URL, $matches);
+preg_match('/^([a-z0-9\/.]+)$/', $URL, $matches);
 
 // print_r($matches);
- 
-// if($flag && empty($matches) || $matches[1] != $URL){ 
-//     $flag = ""; 
-//     $stop = 3;        //Pass 
-// } 
+
+if($flag && empty($matches) || $matches[1] != $URL){ 
+    $flag = ""; 
+    $stop = 3;        //Pass 
+} 
 
 //第四，多个 / 也是可以的 
 //所以，第四个要求是不得出现 // 
@@ -50,7 +49,8 @@ if($flag && strpos($URL, '//') !== FALSE){
 
 //第五，显然加上index.php或者减去index.php都是可以的 
 //所以我们下一个要求就是必须包含/index.php，并且以此结尾 
-if($flag && substr($URL, -10) !== '/index.php'){ 
+if($flag && substr($URL, -9) !== '/web1.php'){ 
+                            
     $flag = ""; 
     $stop = 5;        //Not Pass 
 } 
@@ -64,14 +64,14 @@ if($flag && strpos($URL, 'p.') !== FALSE){
 
 //第七，现在是最关键的时刻 
 //你的$URL必须与/indirection/index.php有所不同 
-if($flag && $URL == '/exam/web/index.php'){ 
+if($flag && $URL == '/shiyanba/web1.php'){ 
     $flag = ""; 
     $stop = 7;        //Not Pass 
 } 
 if(!$stop) $stop = 8; 
 
-echo 'Flag: '.$flag; 
-echo $stop;
+echo 'Flag: '.$flag."</br>"; 
+echo 'Stop: '.$stop;
 
 echo '<hr />'; 
 for($i = 1; $i < $stop; $i++) 
