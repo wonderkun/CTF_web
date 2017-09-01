@@ -451,6 +451,7 @@ ref: https://github.com/cure53/XSSChallengeWiki/wiki/Mini-Puzzle-1-on-kcal.pw
 也是炒鸡好的题目，输入点在textarea里面，在不能闭合的情况下搞事情
 
 有一个细节就是，开启了xss保护 在IE下，这个保护是他会把认为有害的字符过滤掉
+![](http://mmbiz.qpic.cn/mmbiz_png/fwNqC4xHXIpgOSLQpYt4viblZnd3uT86iadXn0TKGCW6fI4scTFoGw6vmDdqsRcKcnV24OPiczTX1hFPDykeGFDiaQ/0.png?tp=webp&wxfrom=5&wx_lazy=1)
 
 IE exp:
 ```
