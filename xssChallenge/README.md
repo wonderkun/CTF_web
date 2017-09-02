@@ -498,9 +498,3 @@ http://xianzhi.aliyun.com/xss21.php?a=a....(中间省略9000个a)#<img src=1 one
 FF测试不成功，应该它对location.hash的操作，比如<还会url编码safai，空格会自动%20编码另外<svg/onload=alert(1)>操作不会成功，因为网页是已经加载好了
 ```
 
-
-
-
-
-
-
