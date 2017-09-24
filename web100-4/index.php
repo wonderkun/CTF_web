@@ -2,7 +2,7 @@
 error_reporting(0);
 
 include_once("flag.php");
-
+$KEY='ISecer:www.isecer.com';
 $cookie = $_COOKIE['ISecer'];
 
 if(isset($_GET['hint'])){
@@ -13,6 +13,7 @@ elseif (unserialize($cookie) === "$KEY")
     echo "$flag";
 }
 else {
+
 ?>
 <html>
 <head>
@@ -31,8 +32,6 @@ else {
 </div>
 </body>
 </html>
-
 <?php
-}
-$KEY='ISecer:www.isecer.com';
+}	
 ?>
