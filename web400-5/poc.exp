@@ -1,0 +1,26 @@
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarylxknDywuiKIurEpO
+
+------WebKitFormBoundarylxknDywuiKIurEpO
+Content-Disposition: form-data; name="upfile[1]"
+
+test
+------WebKitFormBoundarylxknDywuiKIurEpO
+Content-Disposition: form-data; name="upfile[2]"
+
+png
+------WebKitFormBoundarylxknDywuiKIurEpO
+Content-Disposition: form-data; name="upfile[4]"
+
+php
+------WebKitFormBoundarylxknDywuiKIurEpO
+Content-Disposition: form-data; name="upfile"; filename="2.php"
+Content-Type: text/php
+
+<?php phpinfo();?>
+------WebKitFormBoundarylxknDywuiKIurEpO--
+
+
+-------------------------------------------- 
+
+Content-Length: 750
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarylxknDywuiKIurEpO%0d%0a%0d%0a------WebKitFormBoundarylxknDywuiKIurEpO%0d%0aContent-Disposition: form-data; name="upfile[1]"%0d%0a%0d%0atest%0d%0a------WebKitFormBoundarylxknDywuiKIurEpO%0d%0aContent-Disposition: form-data; name="upfile[2]"%0d%0a%0d%0apng%0d%0a------WebKitFormBoundarylxknDywuiKIurEpO%0d%0aContent-Disposition: form-data; name="upfile[4]"%0d%0a%0d%0aphp%0d%0a------WebKitFormBoundarylxknDywuiKIurEpO%0d%0aContent-Disposition: form-data; name="upfile"; filename="2.php"%0d%0aContent-Type: text/php%0d%0a%0d%0a<?php phpinfo();?>%0d%0a------WebKitFormBoundarylxknDywuiKIurEpO--%0d%0a

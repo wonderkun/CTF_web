@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>PHP Web Repeater</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap/css/sticky-footer.css" rel="stylesheet">
+    <script src="./bootstrap/js/jquery-3.2.1.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        .page-header{
+          margin-top:20px;
+        }
+        .typeBtn{
+          margin-left: -15px;
+        }
+        .urlBtn{
+          margin-left: -15px;
+        }
+        .sendBtn{
+          margin-left: -5px;
+        }
+        .response{
+          margin-top:20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h4>PHP Repeater</h4>
+      </div>
+      <div class="container">
+        <div class="row">
+              <div class="col-md-1 typeBtn"> 
+                  <a class="btn btn-default" href="#" role="button">Type</a> 
+              </div>
+              <div class="col-md-2">  
+                  <select class="form-control" id="typeBtnValue">
+                        <option>GET</option>
+                        <option>POST</option>
+                  </select>
+              </div>
+              <div class="col-md-1 urlBtn">
+                  <a class="btn btn-default" href="#" role="button">URL</a> 
+              </div>
+              <div class="col-md-7 urlInput">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputUrl" placeholder="http://www.iie.ac.cn/">
+                </div>
+              </div>
+              <div class="col-md-1 sendBtn">
+                  <button id="btnSend"class="btn btn-default" type="submit">Send</button>
+              </div>
+        </div>
+        <div class="row">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#">Header</a></li>
+                </ul>
+                <textarea id="headerText" class="form-control headerInput" rows="3" placeholder="Accept-Language: zh-CN"></textarea>
+        </div>
+        <div class="row" style="margin-top:20px;">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">data</a></li>
+            </ul>
+            <textarea id="dataText" class="form-control headerInput" rows="3" placeholder="username=admin&password=123456"></textarea>
+        </div>
+        <div class="row response">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">response</a></li>
+            </ul>
+            <textarea id="resText" class="form-control" rows="8" placeholder=""></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script>
+       $("#btnSend").click(function(){
+          $("#resText").val("");
+          var type = $("#typeBtnValue option:selected").val()||"GET";
+          var url = $("#inputUrl").val()||"http://www.iie.ac.cn/";
+          var headerText = $("#headerText").val()||null;
+          if(headerText){
+              var headerTexts = headerText.split("\n");
+              console.log(headerTexts);
+          }else{
+              var headerTexts={};
+          }
+
+          var dataRaw = $('#dataText').val() || null ;
+          var postData = {}; 
+          if(dataRaw){
+            dataRaw = dataRaw.split("&");
+            // console.log(dataRaw);
+            for(var i=0 ;i<dataRaw.length;i++){
+            // console.log(dataRaw.length);
+            // console.log(i);
+             postData[dataRaw[i].split('=')[0]] = dataRaw[i].split("=")[1];
+            }
+          }
+          var data = {};
+
+          data.type = type; 
+          data.url = url;
+          data.postData = postData;
+          data.header = headerTexts;
+          console.log(data);
+
+          $.ajax({
+            url: "./repeater.php",
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            success: function(res){
+              // console.log(dddsdsds);
+              // console.log(typeof data);
+              console.log(res);
+              // var res = JSON.parse(res);
+              if(res.state=="FAIL"){
+                  $("#resText").val(res.message);
+              }else{
+                 $("#resText").val(res.reqHeader+res.res);
+              }
+            }
+
+          });
+
+
+       });
+    </script>
+  </body>
+</html>
