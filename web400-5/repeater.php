@@ -38,6 +38,9 @@ if(!("http" === strtolower($urlInfo["scheme"]) || "https"===strtolower($urlInfo[
 }
 
 //过滤SSRF
+
+// if(preg_match('/^([2][0-4]\d|[2][5][0-5]|[1]\d\d|[1-9][\d]|[\d])(\.([2][0-4]\d|[2][5][0-5]|[1]\d\d|[1-9][\d]|[\d])){3}$/',$urlInfo["host"])){ 如果是这样有几种做法？
+    
 if(preg_match('/^([2][0-4]\d|[2][5][0-5]|[1]\d\d|[1-9][\d]|[\d])(\.([2][0-4]\d|[2][5][0-5]|[1]\d\d|[1-9][\d]|[\d])){3}/',$urlInfo["host"])){
     $ip = $urlInfo["host"];
 }else{
