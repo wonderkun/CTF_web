@@ -1,0 +1,4 @@
+.DS_Store
+tmp
+*.bsdesign
+rsync-exclude-list.txt
