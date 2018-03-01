@@ -1,0 +1,97 @@
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-image: url("../background.jpg");
+	color: #ddd;
+}
+div.back{
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 20px;
+}
+button{
+	min-width:150px;
+	margin-left:30px;
+}
+div.button a{
+	min-width: 130px;
+}
+ul li{
+	margin-top: 10px;
+	border-radius: 5px;
+}
+ul.buy{
+	margin-top: 150px; 
+}
+img.avatar{
+	max-width: 50px;
+	max-height: 50px;
+	border-radius: 50px;
+}
+div.warn{
+	margin-top: 150px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	background-color: #444;
+}
+div.warn h3{
+	margin-top: 5px;
+}
+div.warn p a{
+	margin-left: 20px; 
+}
+li a{
+	margin-left: 20px; 
+}
+h2{
+	color: #ddd;
+}
+div.window{
+	max-height: 300px;
+	max-width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.list-group-item{
+	background-color: #444;
+}
+div.main{
+	min-height: 200px;
+}
+div.list-group{
+	background-color: #444;
+}
+div.list{
+	min-width: 60%;
+}
+div.cimg{
+	min-width: 40%;
+}
+div.cimg img{
+	margin: auto;
+	max-height: 150px;
+	text-align: center;
+	display: block;
+}
+div.cimg h4{
+	text-align: center;
+}
+div.edit{
+	width: 450px;
+	margin-top: 10px;
+	margin: auto;
+}
+div.edit input{
+	max-width: 400px;
+	margin: auto;
+}
+div.edit textarea{
+	max-width: 400px;
+	margin: auto;
+}
+div.edit h4{
+	margin-left: 10px; 
+}
+div.bimg{
+	float: left;
+	margin-left: 35px;
+}
