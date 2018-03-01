@@ -3,7 +3,7 @@
 这是HCTF 2017的一个真题，主要利用some攻击
 关于什么是some攻击，出题人已经讲得很清楚了，[在这里](https://lorexxar.cn/2017/11/15/hctf2017-deserted-world/)
 
-**核心思想就是利用弹出的window.opener去操作同源的父窗口的dom对象**
+**核心思想就是利用弹出的窗口的window.opener去操作同源的父窗口的dom对象**
 
 ### 出题人提供一种解法：
 
