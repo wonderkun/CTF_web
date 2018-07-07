@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}post bug{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Post Bug</h1>
+</div>
+<ul class="posts">
+    {{ wtf.quick_form(form) }}
+    {% for post in posts %}
+    	<li class="post">
+    	<div class="post-date">
+    		{{ moment(post.timestamp).fromNow() }}
+    		{% if post.flag %}
+    		*Have been consulted*
+    		{% else %}
+    		#Not consulted#
+    		{% endif %}
+    	</div>
+    		<div class="post-url">{{ post.bug_url }}</div>
+    		<div class="post-body">{{ post.body }}</div>
+    	</li>
+    {% endfor %}
+</ul>
+{% endblock %}

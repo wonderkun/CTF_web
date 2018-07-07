@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}UserInfo{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+	<h1>{{user.username}}</h1>
+	{% if user.name or user.location %}
+	<p>
+		{% if user.name %}{{ user.name }}{% endif %}
+		{% if user.location %}-{{ user.location }}{% endif %}
+		{% if user.about_me %}{{ user.about_me }}{% endif %}
+	</p>
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Index{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+	{% if current_user.is_authenticated %}
+		<h1>Hello, {{ current_user.username }}</h1>
+		<p>This is an internal version of the Syc working notes project. You can write down your recent task memo. If you find bug, you are welcome to submit it to the administrator in time~</p>
+		<p>	#BY a programmer who stayed up late at night#</p>
+	{% else %}
+    	<h1>Hello, Ctfer!</h1>
+    {% endif %}
+</div>
+{% endblock %}

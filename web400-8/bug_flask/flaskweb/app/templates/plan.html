@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}post bug{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Write down your secret plan. Rest assured that no one will see you.</h1>
+</div>
+<ul class="posts">
+    {{ wtf.quick_form(form) }}
+    {% for plan in plans %}
+    	<li class="post">
+    	   <div class="post-date">
+    		  {{ moment(plan.timestamp).fromNow() }}
+              {{ plan.content }}
+    	   </div>
+    	</li>
+    {% endfor %}
+</ul>
+{% endblock %}

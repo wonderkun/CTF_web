@@ -1,0 +1,40 @@
+version: '3.6'
+
+services:
+  ctf_web:
+    build: ./bug_flask
+    image: cl0und/ctf_web
+    container_name: bugweb
+    networks:
+      - cl0und-network
+    volumes:
+      - ./bug_flask/flaskweb:/bb9fb6cb9bb458df093f9b50ca8d3737/
+    command: bash -c "ping -c 3 bugftp && chown sycl0ver:sycl0ver -R /bb9fb6cb9bb458df093f9b50ca8d3737 && uwsgi --ini uwsgi.ini"
+    tty: true
+    stdin_open: true
+
+  ctf_ftp:
+    build: ./bug_ftp
+    image: cl0und/ctf_ftp
+    container_name: bugftp
+    networks:
+      - cl0und-network
+    command: bash -c "service vsftpd start && top"
+    tty: true
+    stdin_open: true
+
+  ctf_nginx:
+    build: ./bug_nginx
+    image: cl0und/ctf_nginx
+    container_name: bugnginx
+    networks:
+      - cl0und-network
+    entrypoint: ["nginx", "-g", "daemon off;"]
+    ports: 
+      - 4455:4455
+    stdin_open: true
+    tty: true
+
+networks:
+  cl0und-network:
+    name: app

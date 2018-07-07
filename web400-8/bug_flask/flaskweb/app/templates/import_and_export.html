@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}import and export{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Import or Export your Plan</h1>
+</div>
+<input class="btn btn-default" id="submit" name="submit" type="button" value="Export" onclick="window.open('/export')">
+{{ wtf.quick_form(form) }}
+{% endblock %}
