@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER cl0und "cl0und@sycl0ver"
 ENV SECRET_KEY zwrz#E!zR%sQt&Uo5PDXld%b9xXZi%84JsqPHBgCfh4g*ZXT@6eQVO4b#Ps2u9yy
-RUN apt-get update
+RUN apt-get -y update
 RUN apt-get install -y python3-pip
 RUN apt-get install -y vim
 RUN apt-get install -y curl
