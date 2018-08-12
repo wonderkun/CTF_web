@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PasteBin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    </head>
+    <body>
+        <div class="page-header">
+            <h3>Welcome to a simple PasteBin</h3>
+        </div>
+        <ul class="nav nav-tabs">
+            <li><a href="javascript:void(0)">Paste</a></li>
+            <li><a href="javascript:getlist();">List</a></li>
+            <li><a href="javascript:logout();">Logout</a></li>
+        </ul>
+        <form role="form">
+         <div class="form-group">
+            <textarea class="form-control" rows="15" id="content"></textarea>
+         </div>
+         <button type="submit" class="btn btn-default" onclick="paste();">submit</button>
+      </form>  
+    </body>

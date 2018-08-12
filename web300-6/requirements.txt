@@ -1,0 +1,7 @@
+Flask-SQLAlchemy==2.3.2
+Jinja2==2.10
+pycrypto==2.6.1
+six==1.11.0
+SQLAlchemy==1.2.10
+Werkzeug==0.14.1
+cryptography==2.3
