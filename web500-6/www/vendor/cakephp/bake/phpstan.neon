@@ -1,0 +1,7 @@
+parameters:
+    autoload_files:
+        - tests/bootstrap.php
+    ignoreErrors:
+        - '#Call to an undefined method Cake\\Datasource\\SchemaInterface::columnType\(\)#'
+        - '#Call to an undefined method Cake\\Database\\Type::getDateTimeClassName\(\)#'
+        - '#Constant TESTS not found#'

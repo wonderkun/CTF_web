@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/squizlabs/php_codesniffer/tests/bootstrap.php">
+    <testsuites>
+        <testsuite name="CakePHP CodeSniffer Test Suite">
+            <file>./vendor/squizlabs/php_codesniffer/tests/AllTests.php</file>
+        </testsuite>
+    </testsuites>
+
+    <!-- Prevent coverage reports from looking in tests, vendors, config folders -->
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./CakePHP/Sniffs</directory>
+        </whitelist>
+    </filter>
+</phpunit>

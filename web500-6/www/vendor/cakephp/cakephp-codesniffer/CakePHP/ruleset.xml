@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<ruleset name="CakePHP">
+ <description>CakePHP coding standard</description>
+
+ <exclude-pattern>\.git</exclude-pattern>
+ <exclude-pattern>*/Config/*.ini.php</exclude-pattern>
+ <exclude-pattern>/*/tmp/</exclude-pattern>
+
+ <rule ref="PSR2"/>
+
+ <!--
+ Property and method names with underscore prefix are allowed in CakePHP.
+ Not using underscore prefix is a recommendation of PSR2, not a requirement.
+ -->
+ <rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
+  <severity>0</severity>
+ </rule>
+ <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
+  <severity>0</severity>
+ </rule>
+ <rule ref="Squiz.NamingConventions.ValidFunctionName.PublicUnderscore">
+  <severity>0</severity>
+ </rule>
+ <rule ref="PEAR.NamingConventions.ValidFunctionName.PublicUnderscore">
+  <severity>0</severity>
+ </rule>
+ <rule ref="Zend.NamingConventions.ValidVariableName">
+ </rule>
+ <rule ref="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore">
+  <severity>0</severity>
+ </rule>
+ <rule ref="Zend.NamingConventions.ValidVariableName.ContainsNumbers">
+  <severity>0</severity>
+ </rule>
+ <rule ref="Zend.NamingConventions.ValidVariableName.StringVarContainsNumbers">
+  <severity>0</severity>
+ </rule>
+ <rule ref="Zend.NamingConventions.ValidVariableName.MemberVarContainsNumbers">
+  <severity>0</severity>
+ </rule>
+ <rule ref="Zend.NamingConventions.ValidVariableName.NotCamelCaps">
+  <severity>0</severity>
+ </rule>
+ <rule ref="Zend.NamingConventions.ValidVariableName.MemberVarNotCamelCaps">
+  <severity>0</severity>
+ </rule>
+
+ <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+  <properties>
+   <property name="ignoreBlankLines" value="false"/>
+  </properties>
+ </rule>
+
+ <!--
+ Temporarily ignore until API docblock formatting and line length issues in core code are fixed.
+ -->
+ <rule ref="CakePHP.Commenting.FunctionComment" />
+ <rule ref="CakePHP.Commenting.FunctionComment.ParamCommentNotCapital">
+  <severity>0</severity>
+ </rule>
+ <rule ref="CakePHP.Commenting.FunctionComment.ParamCommentFullStop">
+  <severity>0</severity>
+ </rule>
+ <rule ref="CakePHP.Commenting.FunctionComment.ThrowsNotCapital">
+  <severity>0</severity>
+ </rule>
+ <rule ref="CakePHP.Commenting.FunctionComment.ThrowsNoFullStop">
+  <severity>0</severity>
+ </rule>
+ <rule ref="CakePHP.Commenting.FunctionComment.EmptyThrows">
+  <severity>0</severity>
+ </rule>
+ <rule ref="Generic.Files.LineLength.TooLong">
+  <severity>0</severity>
+ </rule>
+
+ <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+ <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+ <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
+
+ <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+ <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
+ <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+ <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+ <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+
+ <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+ <rule ref="Generic.Commenting.Todo"/>
+
+ <rule ref="PEAR.ControlStructures.ControlSignature"/>
+
+ <rule ref="Generic.Files.LineEndings"/>
+
+ <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+
+ <rule ref="Squiz.Operators.ValidLogicalOperators"/>
+
+ <rule ref="Generic.PHP.DeprecatedFunctions"/>
+ <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops"/>
+ <rule ref="Squiz.PHP.Eval"/>
+ <rule ref="Generic.PHP.ForbiddenFunctions"/>
+ <rule ref="Squiz.PHP.NonExecutableCode"/>
+ <rule ref="Generic.PHP.NoSilencedErrors"/>
+
+ <rule ref="Squiz.Scope.MemberVarScope"/>
+ <rule ref="Squiz.Scope.StaticThisUsage"/>
+
+ <rule ref="Squiz.WhiteSpace.CastSpacing"/>
+ <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+ <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+ <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+ <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+ <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
+ <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+ <!-- Relax some src/* and tests/* rules -->
+ <rule ref="PSR1.Files.SideEffects">
+  <exclude-pattern>*/config/*</exclude-pattern>
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+ <rule ref="PSR1.Classes.ClassDeclaration">
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+ <rule ref="PSR1.Methods.CamelCapsMethodName">
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+ <rule ref="PEAR.NamingConventions.ValidClassName">
+  <exclude-pattern>*/CakePHP/*</exclude-pattern>
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+ <rule ref="Squiz.Classes.ValidClassName">
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+ <rule ref="CakePHP.Commenting.FunctionComment">
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+ <rule ref="Squiz.NamingConventions.ValidFunctionName">
+  <exclude-pattern>*/src/*</exclude-pattern>
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+ <rule ref="Generic.NamingConventions.CamelCapsFunctionName">
+  <exclude-pattern>*/src/*</exclude-pattern>
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+ <rule ref="PEAR.NamingConventions.ValidFunctionName">
+  <exclude-pattern>*/src/*</exclude-pattern>
+  <exclude-pattern>*/tests/*</exclude-pattern>
+ </rule>
+
+ <!-- All rules in ./Sniffs are included automatically -->
+</ruleset>

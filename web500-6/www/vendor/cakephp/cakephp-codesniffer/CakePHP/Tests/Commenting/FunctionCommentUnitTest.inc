@@ -1,0 +1,251 @@
+<?php
+namespace Beakman;
+
+use Other\Crap;
+use Other\Error as OtherError;
+
+class Foo
+{
+    /**
+     * Some sentence.
+     *
+     * @param integer $param Some Param.
+     * @param boolean $otherParam Some Other Param.
+     * @return string Something.
+     */
+    public function bar($param, $otherParam)
+    {
+    }
+
+    /**
+    * Some sentence.
+    *
+    * @param int $param
+    * @param bool $otherParam
+    * @return void
+    */
+    public function missingParamComment($param, $otherParam)
+    {
+    }
+
+    /**
+     * Some sentence.
+     *
+     * @param
+     * @param
+     * @return void
+     */
+    public function missingParamType($param, $otherParam)
+    {
+    }
+
+    /**
+     * Some sentence.
+     *
+     * @return void
+     */
+    public function invalidReturnVoid()
+    {
+        return 'string';
+    }
+
+    /**
+     * [doThing description]
+     *
+     * @param string $foo Foo foo foo.
+     * @return void
+     */
+    public function doThing($foo)
+    {
+    }
+
+    /**
+     * Test throws
+     *
+     * @throws Exception An expection happened.
+     * @throws CakePHP\Boom A boom went off.
+     * @throws CakePHP\Error\Boom Oh, shucks, another boom.
+     * @throws Other\Crap Oh boy.
+     * @throws Other\Error\Issue A missing tissue for your PSR-2 issues.
+     * @return void
+     */
+    public function test()
+    {
+        switch ($a) {
+            case 1:
+                throw new Boom();
+            case 2:
+                throw new Error\Boom();
+            case 3:
+                throw new OtherError\Issue();
+            case 4:
+                throw new Crap();
+            default:
+                throw new \Exception();
+        }
+    }
+
+    /**
+     * @return void
+     * @return void
+     */
+    public function doubleReturn()
+    {
+    }
+
+    /**
+     * @return
+     */
+    public function missingReturnType()
+    {
+    }
+
+    /**
+     * @return integer
+     */
+    public function returnIntegerFail()
+    {
+        return 1;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function returnBooleanFail()
+    {
+        return false;
+    }
+
+    /**
+     * @return int
+     */
+    public function returnIntPass()
+    {
+        return 1;
+    }
+
+    /**
+     * @return bool
+     */
+    public function returnBooleanPass()
+    {
+        return false;
+    }
+
+    /**
+     * @return int
+     */
+    public function invalidReturnNotVoid()
+    {
+        return;
+    }
+
+    /**
+     * @return void
+     * @throws
+     */
+    public function invalidThrows()
+    {
+        throw new \RuntimeException();
+        return;
+    }
+
+    /**
+     * @return void
+     * @throws \RuntimeException()
+     */
+    public function EmptyThrows()
+    {
+        throw new \RuntimeException();
+        return;
+    }
+
+    /**
+     * @return void
+     * @throws \RuntimeException No dot
+     */
+    public function throwsNoFullStop()
+    {
+        throw new \RuntimeException();
+    }
+
+    /**
+     * @return void
+     * @throws \RuntimeException not a capital.
+     */
+    public function throwsNotCapital()
+    {
+        throw new \RuntimeException();
+    }
+
+    /**
+     * @param int $param not a capital.
+     * @return void
+     */
+    public function paramCommentNotCapital($param)
+    {
+    }
+
+    /**
+     * @param int $param No final dot
+     * @return void
+     */
+    public function paramCommentFullStop($param)
+    {
+    }
+
+    /**
+     * @param int $para Comment.
+     * @return void
+     */
+    public function paramNameNoMatch($param)
+    {
+    }
+
+    /**
+     * @param int $Param Comment.
+     * @return void
+     */
+    public function paramNameNoCaseMatch($param)
+    {
+    }
+
+    /**
+     *
+     */
+    public function missingReturn()
+    {
+        return 'what';
+    }
+
+    /**
+     * @param int
+     * @return void
+     */
+    public function missingParamName($param)
+    {
+    }
+
+    /**
+     * @param int $param A description.
+     * @param int $superflous A description.
+     * @return void
+     */
+    public function extraParamComment($param)
+    {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function inherited()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function inheritedCaseInsentive()
+    {
+    }
+}

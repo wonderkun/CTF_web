@@ -1,0 +1,53 @@
+{
+    "name": "cakephp/debug_kit",
+    "description": "CakePHP Debug Kit",
+    "type": "cakephp-plugin",
+    "keywords": ["cakephp", "debug", "kit"],
+    "homepage": "https://github.com/cakephp/debug_kit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark Story",
+            "homepage": "http://mark-story.com",
+            "role": "Author"
+        },
+        {
+            "name": "CakePHP Community",
+            "homepage": "https://github.com/cakephp/debug_kit/graphs/contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cakephp/debug_kit/issues",
+        "forum": "http://stackoverflow.com/tags/cakephp",
+        "irc": "irc://irc.freenode.org/cakephp",
+        "source": "https://github.com/cakephp/debug_kit"
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "cakephp/cakephp": "^3.4.0",
+        "cakephp/chronos": "^1.0.0",
+        "cakephp/plugin-installer": "^1.0.0",
+        "composer/composer": "^1.3.0",
+        "jdorn/sql-formatter": "^1.2.0"
+    },
+    "require-dev": {
+        "cakephp/cakephp-codesniffer": "^3.0",
+        "phpunit/phpunit": "^5.7|^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DebugKit\\": "src",
+            "DebugKit\\Test\\Fixture\\": "tests\\Fixture"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cake\\Test\\": "vendor/cakephp/cakephp/tests",
+            "DebugKit\\Test\\": "tests"
+        }
+    },
+    "suggest": {
+        "ext-sqlite": "DebugKit needs to store panel data in a database. SQLite is simple and easy to use."
+    },
+    "minimum-stability": "stable"
+}

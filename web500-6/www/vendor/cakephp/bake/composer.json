@@ -1,0 +1,44 @@
+{
+    "name": "cakephp/bake",
+    "description": "Bake plugin for CakePHP 3",
+    "type": "cakephp-plugin",
+    "keywords": ["cakephp", "bake"],
+    "homepage": "https://github.com/cakephp/bake",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CakePHP Community",
+            "homepage": "https://github.com/cakephp/bake/graphs/contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cakephp/bake/issues",
+        "forum": "http://stackoverflow.com/tags/cakephp",
+        "irc": "irc://irc.freenode.org/cakephp",
+        "source": "https://github.com/cakephp/bake"
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "cakephp/cakephp": "^3.5.10",
+        "cakephp/plugin-installer": "^1.0",
+        "wyrihaximus/twig-view": "^4.2.1"
+    },
+    "require-dev": {
+        "cakephp/cakephp-codesniffer": "^3.0",
+        "phpunit/phpunit": "^5.7 | ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bake\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BakeTest\\": "tests/test_app/Plugin/BakeTest/src",
+            "Pastry\\PastryTest\\": "tests/test_app/Plugin/PastryTest/src",
+            "Bake\\Test\\": "tests",
+            "Bake\\Test\\App\\": "tests/test_app/App",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}

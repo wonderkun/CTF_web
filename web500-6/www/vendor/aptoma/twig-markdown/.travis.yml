@@ -1,0 +1,27 @@
+language: php
+sudo: false
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7
+
+env:
+  global:
+    # travis encrypt CODECLIMATE_REPO_TOKEN=<https://codeclimate.com/repos/53e0fcc8e30ba02d78013d4c/coverage_setup>
+    - secure: "n4I9GwRCxi9UGjhDGe79SV6Nr/fRKpA8N+qqqbkveJv01Z4IRcAsRBRxKrSAX8zJUoFhlJK73VeRnBfdSBddsL3RqgDMbHilZFy6yC7Dj/vVyNe90RPWxc5J7w3sidT2g1OsgWueiUis8y3dGOQd2sewfcb2pZa29/eQusBV5i0="
+
+install:
+  - composer install
+
+before_script:
+  - mkdir -p build/logs
+
+script:
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+  - php vendor/bin/coveralls -v
+  - ./vendor/bin/test-reporter --stdout > codeclimate.json
+  - "curl -X POST -d @codeclimate.json -H 'Content-Type: application/json' -H 'User-Agent: Code Climate (PHP Test Reporter v1.0.1-dev)' https://codeclimate.com/test_reports"

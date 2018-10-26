@@ -1,0 +1,76 @@
+{#
+/**
+ * Fixture Template file
+ *
+ * Fixture Template used when baking fixtures with bake
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @since         2.0.0
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+#}
+<?php
+namespace {{ namespace }}\Test\Fixture;
+
+use Cake\TestSuite\Fixture\TestFixture;
+
+/**
+ * {{ name }}Fixture
+ *
+ */
+class {{ name }}Fixture extends TestFixture
+{
+{% if table %}
+
+    /**
+     * Table name
+     *
+     * @var string
+     */
+    public $table = '{{ table|raw }}';
+{% endif %}
+
+{%- if import %}
+
+    /**
+     * Import
+     *
+     * @var array
+     */
+    public $import = {{ import|raw }};
+{% endif %}
+
+{%- if schema %}
+
+    /**
+     * Fields
+     *
+     * @var array
+     */
+    // @codingStandardsIgnoreStart
+    public $fields = {{ schema|raw }};
+    // @codingStandardsIgnoreEnd
+{% endif %}
+
+{%- if records %}
+
+    /**
+     * Init method
+     *
+     * @return void
+     */
+    public function init()
+    {
+        $this->records = {{ records|raw }};
+        parent::init();
+    }
+{% endif %}
+}

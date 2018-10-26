@@ -1,0 +1,35 @@
+{
+    "name": "aptoma/twig-markdown",
+    "description": "Twig extension to work with Markdown content",
+    "keywords": ["twig", "markdown"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gunnar Lium",
+            "email": "gunnar@aptoma.com"
+        },
+        {
+            "name": "Joris Berthelot",
+            "email": "joris@berthelot.tel"
+        }
+    ],
+    "require": {
+        "twig/twig": "~1.12"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "satooshi/php-coveralls": "~0.6",
+        "codeclimate/php-test-reporter": "dev-master",
+        "michelf/php-markdown": "~1",
+        "league/commonmark": "~0.5",
+        "knplabs/github-api": "~1.2",
+        "erusev/parsedown": "^1.6"
+    },
+    "suggest": {
+        "michelf/php-markdown": "Original Markdown engine with MarkdownExtra.",
+        "knplabs/github-api": "Needed for using GitHub's Markdown engine provided through their API."
+    },
+    "autoload": {
+        "psr-0": { "Aptoma": "src/" }
+    }
+}
