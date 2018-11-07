@@ -1,0 +1,8 @@
+version: '2'
+services:
+  apache2-php7:
+    build: ./
+    volumes:
+    - ./www:/var/www/html/
+    ports:
+    - "8080:8080"
