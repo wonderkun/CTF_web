@@ -1,1 +1,0 @@
-FROM 1and1internet/ubuntu-16-apache-php-7.0:latest

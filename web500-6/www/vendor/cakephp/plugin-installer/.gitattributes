@@ -1,4 +1,0 @@
-# Define the line ending behavior of the different file extensions
-# Set default behaviour, in case users don't have core.autocrlf set.
-* text=auto
-* text eol=lf

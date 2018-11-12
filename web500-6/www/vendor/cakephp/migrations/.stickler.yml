@@ -1,5 +1,0 @@
-linters:
-  phpcs:
-    standard: CakePHP
-files:
-  ignore: ['tests/bootstrap.php', 'tests/comparisons/*']
