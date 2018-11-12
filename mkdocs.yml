@@ -1,0 +1,37 @@
+# Project Information
+site_name: CTF_web
+site_description: writeup for CTF_web project
+site_author: CTFer
+site_url: https://github.com/wonderkun/CTF_web/
+
+# Repository
+repo_name: 'wonderkun/CTF_web'
+repo_url: 'https://github.com/wonderkun/CTF_web'
+edit_uri: 'blob/master/docs/'
+
+# Copyright
+copyright: 'Copyright &copy; 2016 - 2018 CTF_web'
+
+# Contents
+nav:
+  - CTF_web入门 :
+    - Getting Started: index.md
+
+  - 入门题目:
+    - 入门: 入门题目/index.md  
+  - web100:
+    - 入门: web100/index.md  
+# Theme
+theme:
+  name: 'material'
+  language: 'zh'
+  palette:
+    primary: 'white'
+    accent: 'red'
+  logo:
+    icon: 'school'
+  feature:
+    tabs: true
+  font:
+    text: 'Fira Sans'
+    code: 'Fira Mono'
