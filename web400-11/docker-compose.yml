@@ -1,0 +1,9 @@
+version: '2'
+services:
+  apache2-php7:
+    build: ./
+    volumes:
+    - ./www:/var/www/html/:ro
+    - ./www/sandbox:/var/www/html/sandbox
+    ports:
+    - "8088:8080"
