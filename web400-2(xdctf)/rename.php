@@ -43,7 +43,7 @@ if(isset($req['oldname']) && isset($req['newname'])) {
     <base href="/">
     <meta charset="utf-8" />
 </head>
-<h3>Delete file</h3>
+<h3>Rename</h3>
 <body>
 <form method="post">
     <p>
