@@ -1,0 +1,14 @@
+version: '2'
+services:
+  hardphp:
+    build: ./apache2/
+    volumes:
+      - ./src/:/var/www/html/
+    ports:
+      - "8888:8080"
+    links:
+      - mysql
+  mysql: 
+    build: ./mysql/
+    environment:
+      - MYSQL_ROOT_PASSWORD=quqKzef8xN2Ey91X

@@ -1,0 +1,22 @@
+.content{
+  margin: 50px auto;
+  width: 80%;    
+}
+.hero-unit{
+    padding: 30px;
+}
+.form-content{
+  margin: 150px auto;
+  width: 50%;
+}
+
+.pic{
+  width: 80px;
+  height: 80px;
+}
+
+.text{
+   width: 100%;
+   margin: auto; 
+   display: block;
+}
