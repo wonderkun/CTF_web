@@ -16,7 +16,7 @@ __      _____| | ___ ___  _ __ ___   ___          | |_ ___        / ___|_   _|  
 
 [![Backers on Open Collective](https://opencollective.com/CTF_web/backers/badge.svg)](#backers)
  [![Sponsors on Open Collective](https://opencollective.com/CTF_web/sponsors/badge.svg)](#sponsors) 
-
+[![Build Status](https://travis-ci.org/wonderkun/CTF_web.svg?branch=doc)](https://travis-ci.org/wonderkun/CTF_web)
 
 
 
