@@ -20,7 +20,10 @@ nav:
   - 入门题目:
     - 入门: 入门题目/index.md  
   - web100:
-    - 入门: web100/index.md  
+    - web100-1: web100/web100-1.md  
+    - web100-2: web100/web100-2.md
+  - web300:
+    - web300-1: web300/web300-1.md  
 # Theme
 theme:
   name: 'material'
