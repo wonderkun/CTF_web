@@ -1,0 +1,22 @@
+version: '3'
+
+
+services:
+  db:
+    build: ./sqlserver
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: QIUHDI13hqssiuaQDHsaaseglpduac
+    ports:
+      - "1433:1433"
+  challenge:
+    build: .
+    volumes:
+      - ./web/html:/var/www/html
+      - ./web/miniProxy:/var/www/miniProxy
+    container_name: challenge
+    depends_on:
+      - db
+    ports:
+      - "8000:80"
+    tty: true

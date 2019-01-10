@@ -1,0 +1,46 @@
+server {
+    listen 80;
+    access_log  /var/log/nginx/example.log;
+
+    server_name localhost;
+
+    root /var/www/html;
+
+    location /uploads {
+        autoindex on;
+        alias /var/www/uploads/;
+    }
+
+    location / {
+        alias /var/www/html/;
+        index index.php;
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        }
+    }
+
+    location /inc/ {
+        deny all;
+    }
+}
+
+server {
+    listen 127.0.0.1:8080;
+    access_log /var/log/nginx/proxy.log;
+
+    if ( $request_method !~ ^(GET)$ ) {
+        return 405;
+    }
+    root /var/www/miniProxy;
+    location / {
+        index index.php;
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        }
+    }
+    
+}
