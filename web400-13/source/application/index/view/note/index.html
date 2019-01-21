@@ -1,0 +1,31 @@
+{extend name="index/base" /}
+
+{block name="body"}
+<div class="container-fluid">
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-lg-1">&nbsp;</div>
+        <div class="col-lg-10">
+            <div class="card border-dark mb-3" style="max-width: 70rem;">
+                <div class="card-header">Create Note</div>
+                <div class="card-body">
+                    <h4 class="card-title">Record Your Idea</h4>
+                    <p class="card-text">
+                    <form action="{$baseUrl}index/note" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <textarea class="form-control" id="content" name="content" rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+                        </fieldset>
+                    </form>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1">&nbsp;</div>
+    </div>
+</div>
+{/block}

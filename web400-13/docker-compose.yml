@@ -1,0 +1,16 @@
+version: "3"
+services:
+  web1:
+    build: "."
+    ports:
+      - "80:80"
+    links:
+      - mysql
+    depends_on:
+      - mysql
+  mysql:
+    image: "mysql:5.6"
+    environment:
+      MYSQL_ROOT_PASSWORD: "465b236607c695f3" # 修改数据库密码
+      TZ: 'Asia/Shanghai'
+    command: ['mysqld', '--character-set-server=utf8']

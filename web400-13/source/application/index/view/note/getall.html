@@ -1,0 +1,19 @@
+{extend name="index/base" /}
+
+{block name="body"}
+
+<div class="container-fluid">
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+    <div class="card mb-3">
+        <h3 class="card-header">All Notes</h3>
+        <ul class="list-group list-group-flush">
+            {volist name="notes" id="note"}
+            <li class="list-group-item">{$note.content}</li>
+            {/volist}
+        </ul>
+    </div>
+
+</div>
+
+{/block}

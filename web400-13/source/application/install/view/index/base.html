@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NoteBook</title>
+    <link rel="stylesheet" type="text/css" href="{$baseUrl}public/static/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="{$baseUrl}public/static/css/bootstrap.min.css" />
+
+</head>
+<body>
+<!-- head start-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">NoteBook</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index/note/getall">Notes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index/note">Create Note</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index/login" >Sign In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index/register">Sign Up</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- head end-->
+{block name="body"}{/block}
+<script src="{$baseUrl}public/static/js/jquery-3.3.1.min.js"></script>
+<script src="{$baseUrl}public/static/js/bootstrap.min.js"></script>
+
+{block name="script"}{/block}
+</body>
+</html>

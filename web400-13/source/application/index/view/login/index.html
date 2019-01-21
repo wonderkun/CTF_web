@@ -1,0 +1,33 @@
+{extend name="index/base" /}
+{block name="body"}
+<div class="container-fluid">
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-lg-2">&nbsp;</div>
+        <div class="col-lg-8">
+            <div class="card border-dark mb-3" style="max-width: 60rem;">
+                <div class="card-header">Sign In</div>
+                <div class="card-body">
+                    <form action="{$baseUrl}index/login" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">&nbsp;</div>
+    </div>
+</div>
+
+{/block}

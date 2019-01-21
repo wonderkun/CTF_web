@@ -1,0 +1,45 @@
+{extend name="index/base" /}
+
+{block name="body"}
+<div class="container-fluid">
+    <div class="row">
+    <!-- flag{c08522715b521d7c31e2dc74e0c4c0e2} -->
+    </div>
+    <div class="row">
+        <div class="col-lg-2">&nbsp;</div>
+        <div class="col-lg-8">
+            <form action="{$baseUrl}install" method="post">
+                <fieldset>
+                    <legend>Installation</legend>
+                    <div class="form-group">
+                        <label for="siteName">SiteName</label>
+                        <input type="text" class="form-control" id="siteName" name="sitename" placeholder="Enter website name">
+                    </div>
+                    <div class="form-group">
+                        <label for="dbType">Database Type</label>
+                        <input type="text" class="form-control" id="dbType" name="dbtype" placeholder="mysql">
+                    </div>
+                    <div class="form-group">
+                        <label for="dbHost">Database Host</label>
+                        <input type="text" class="form-control" id="dbHost" name="dbhost" placeholder="localhost">
+                    </div>
+                    <div class="form-group">
+                        <label for="dbUser">Database User</label>
+                        <input type="text" class="form-control" id="dbUser" name="dbuser" placeholder="root">
+                    </div>
+                    <div class="form-group">
+                        <label for="dbPass">Database Password</label>
+                        <input type="text" class="form-control" id="dbPass" name="dbpass" placeholder="database password">
+                    </div>
+                    <div class="form-group">
+                        <label for="dbPort">Database Port</label>
+                        <input type="text" class="form-control" id="dbPort" name="dbport" placeholder="3306">
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-2">&nbsp;</div>
+    </div>
+</div>
+{/block}
