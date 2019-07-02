@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ code.name }}</title>
+    <meta name="referrer" content="origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <script nonce=3ra+TpXGQImBZW8NNdCJ2A==>CONFIG={"viewer":[{"dependencies":[{"integrity":"sha256-sSTatLHEEY8GQrdYAuhkqrYogKZ/jDlgfYaqK3ld/uQ=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js"},{"integrity":"sha256-Y0YX22e5n0zVSAd1tJ6aypkv9o4AEX5YcRKPg1Al8jg=","src":"https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.1/marked.min.js"}],"plugins":{"markdown":{"integrity":"sha256-e4izlzFmEQlenZQnzkYK5oyxV5mX6lwVQjL6onkHiy0=","requires":["markup"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-markdown.min.js"},"markup":{"integrity":"sha256-8nT1E50WC5TDeb3+USsFEXN5ZGgLdmwZ6RS5KT71Wjs=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-markup.min.js"}},"preload":["markdown"]}]};</script>
+    <script src="https://www.google.com/recaptcha/api.js" nonce=3ra+TpXGQImBZW8NNdCJ2A== defer></script>
+    <script src="{% static 'paste/app.js' %}" nonce=3ra+TpXGQImBZW8NNdCJ2A== defer></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'paste/app.css' %}" nonce=3ra+TpXGQImBZW8NNdCJ2A==/>
+  </head>
+  <body>
+    <div id="content" data-lang="markdown" style="display: none">{{ code.text }}</div>
+    <div class="header-container">
+      <div class="header">
+        <span class="header-title">Paste-Tastic! &#128203;</span>
+        <span class="tag-line">The pretty paste solution!&trade;</span>
+      </div>
+    </div>
+    <div class="content-container">
+      <h3 class="paste-name">test</h3>
+      <div id="viewer"></div>
+      <form id="report-form" action="/report" method="post" class="report-form">
+        <input type="hidden" name="page" value="{% url 'view' uuid %}">
+        <input id="report-button" class="button" title="Copyright infringement?" data-sitekey="6LdicpkUAAAAAGfnqdO7q2FTc1li4XM-cQ3eiYHK" data-callback="doReport" type="submit" value="DMCA" />
+      </form>
+      <div class="link-new">
+        <a href="/create">Create new</a>
+      </div>
+      <div class="label-recent">Recently viewed:</div>
+      <ul id="recent-container"></ul>
+    </div>
+  </body>
+</html>

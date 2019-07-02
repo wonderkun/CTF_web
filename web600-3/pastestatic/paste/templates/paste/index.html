@@ -1,0 +1,135 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- script-src 'nonce-3ra+TpXGQImBZW8NNdCJ2A==' 'unsafe-eval' 'strict-dynamic' https: http:; base-uri 'none'; object-src 'none' -->
+    <title>Paste-Tastic</title>
+    <meta name="referrer" content="origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <script nonce=3ra+TpXGQImBZW8NNdCJ2A==>CONFIG={"viewer":[{"dependencies":[{"integrity":"sha256-sSTatLHEEY8GQrdYAuhkqrYogKZ/jDlgfYaqK3ld/uQ=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js"},{"integrity":"sha256-Y0YX22e5n0zVSAd1tJ6aypkv9o4AEX5YcRKPg1Al8jg=","src":"https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.1/marked.min.js"}],"plugins":{"actionscript":{"integrity":"sha256-XDKLLq1uv8yATcsO172Z1MOoDOlbXk75LyPb7EQbwAk=","requires":["javascript"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-actionscript.min.js"},"ada":{"integrity":"sha256-lNxf/WmtaYUhVP+R0Ds04RRZ3hZIA39NlW5VgjWvDrU=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-ada.min.js"},"applescript":{"integrity":"sha256-F3LNnnxVV4AYdmhr9rKaejJ+RJhGsoVKF8iw8iL2HIw=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-applescript.min.js"},"arduino":{"integrity":"sha256-qpBYb63n+L9P3FIsrHv8KhGYq1RI2sc5c2cv28CsYhY=","requires":["cpp"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-arduino.min.js"},"asm6502":{"integrity":"sha256-TdIFG+vWWwpUct6X1WfeQJI4GGb/vlAsG+q8bCrUrjE=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-asm6502.min.js"},"aspnet":{"integrity":"sha256-BWXRjIuZGWCYtsmPy2D1SA+CbXo3VQKig0J7YTGWRj4=","requires":["markup"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-aspnet.min.js"},"bash":{"integrity":"sha256-0W9ddRPtgrjvZVUxGhU/ShLxFi3WGNV2T7A7bBTuDWo=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.min.js"},"basic":{"integrity":"sha256-/iAxh3XPkx7guWsx0JLVTwG/kvDGiONOXwSjMnQ47ps=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-basic.min.js"},"bison":{"integrity":"sha256-zdd9vxPy6Z1MopkjyXFc7FeL31V2jfzunDyotdCTeBY=","requires":["c"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bison.min.js"},"brainfuck":{"integrity":"sha256-VMnAWpm0qsoKYhwjGWpbpIFoEqmKFqgRMvrsPe4SLA8=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-brainfuck.min.js"},"c":{"integrity":"sha256-GUSDFW3k9NM7UWf4Itg/w8lO7pSQznTzo22QgwuMfVM=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-c.min.js"},"cil":{"integrity":"sha256-1P5I9/D3qxSN6XKl9nakXH50C8oIHk95Qxh8o30IX5o=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-cil.min.js"},"clike":{"integrity":"sha256-yLywlZBInSTeO8eTUtLZ9QQHOmG5xwT+FfEIjjMC8RU=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-clike.min.js"},"clojure":{"integrity":"sha256-HN4MXj6IcoKmLjpkeFAMHa4Q7SsqQdzWkbI85CdHOac=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-clojure.min.js"},"cmake":{"integrity":"sha256-Qjmwi+jZhg+v3TUo7c5z7Xxd3xVMvsOxl7e+MnorD/4=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-cmake.min.js"},"coffeescript":{"integrity":"sha256-WmDHGDrlScE7RS4XVlXeTh8q/NvuOizEOH6p4SExV9k=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-coffeescript.min.js"},"cpp":{"integrity":"sha256-7yMNzez7zed7A47fTdjYNtDNKW6EU5zi7Uk7ZoyurNA=","requires":["c"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-cpp.min.js"},"crystal":{"integrity":"sha256-6JDP9F+HEzjPPiWpmaSAk6w2JFs9s81MlVeWbaWW8W4=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-crystal.min.js"},"csharp":{"integrity":"sha256-W+nkLYdja/ZJWhoahOJMsmK6swkfzTtIQRlKyv/4Jx4=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-csharp.min.js"},"css":{"integrity":"sha256-49Y45o2obU1Yv4zkYDpMDyAa+D9sgKNbNy4ZYGRl/ls=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-css.min.js"},"d":{"integrity":"sha256-bk7lVu6vMJNqTgcIj5QAPURt4aMhOtZuKrcDjgKEOjU=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-d.min.js"},"dart":{"integrity":"sha256-1rI2gSHAI+1zU2T/qFCGD2XVXHfR4p5vjpma5LR3KFQ=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-dart.min.js"},"diff":{"integrity":"sha256-2j19IpsajXc3FKagWaOLYxCvNv13NmR4mMP749TMBxg=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-diff.min.js"},"erb":{"integrity":"sha256-a3LUkP+U0/upYKDwxeKylQPoMuvRJI8ugle49HgFhmg=","requires":["ruby"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-erb.min.js"},"erlang":{"integrity":"sha256-8O/rweaGW1tOoTYWQvu7a0ALsJ4USC9EGphsGuyB7WQ=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-erlang.min.js"},"fortran":{"integrity":"sha256-fGA7+D1LeRxTJQWlItOVzD0IXQIAigH0F7qmmyFjLko=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-fortran.min.js"},"fsharp":{"integrity":"sha256-kFgdzdJlTG3iRggIHeCRSee0l5wuig+4zKFDhlipoUQ=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-fsharp.min.js"},"git":{"integrity":"sha256-8J6flH/bvIH0PaeXKSx1V6fzaN0auFyTubqXL90ViIs=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-git.min.js"},"glsl":{"integrity":"sha256-Zy9XC7Aw6NOgIaR2viUyXI8uQPakPFm0P67q9ijfhVU=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-glsl.min.js"},"go":{"integrity":"sha256-0gPlDXMlahNpCwHdKGf6TkjpLCXUS7mliN3nmbKOBCc=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-go.min.js"},"graphql":{"integrity":"sha256-OdTLWlUT4+uAiTOS5uf9gChAsADKtOHFgzhybAEc9I4=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-graphql.min.js"},"groovy":{"integrity":"sha256-ori+xD+EJF521Mm5jzmBSi0v7a8JhfYWTyPceaRwn88=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-groovy.min.js"},"haskell":{"integrity":"sha256-OIvqHXM5UVQAlCLLbb6tkbAg+R3UiCHRssAUPeqr7ao=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-haskell.min.js"},"http":{"integrity":"sha256-TT0aUWucEz9ERKYpzbpz+xjCaBwfhAQLsmWLhiemPJI=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-http.min.js"},"java":{"integrity":"sha256-xkjfLarZfrNcxmgjDVE2XGj4/OIti0A0+HMRz8fg1rI=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-java.min.js"},"javadoc":{"integrity":"sha256-VH6tsuQPtcw/sMyG455EAqxAIaYOVsRQwkke6BKwYcs=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-javadoc.min.js"},"javascript":{"integrity":"sha256-KxieZ8/m0L2wDwOE1+F76U3TMFw4wc55EzHvzTC6Ej8=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-javascript.min.js"},"javastacktrace":{"integrity":"sha256-tJDVY7vlGKeEVmQ79x/G86sbN86a6eKm2BwEFJ++B6w=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-javastacktrace.min.js"},"jsdoc":{"integrity":"sha256-Z70lGjKwHp4+bggv2pZglmPrjW6l9TZWG5yQE9Mo0EY=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-jsdoc.min.js"},"json":{"integrity":"sha256-18m89UBQcWGjPHHo64UD+sQx4SpMxiRI1F0MbefKXWw=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-json.min.js"},"jsx":{"integrity":"sha256-oKM5pXZjDLVh12SHSa1wtIJV0zF49TOwu+jbqkDfYZA=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-jsx.min.js"},"julia":{"integrity":"sha256-eKXQhHu0IjpzjiQVHa1PqloCsn5XxrLHEovEwkdOpx8=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-julia.min.js"},"kotlin":{"integrity":"sha256-UVVPaOGx3GBfzl/v/ZjLlEJ9xoN4pSgYNmtmWx5HCZc=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-kotlin.min.js"},"latex":{"integrity":"sha256-X4kboLjwRBUNvyd5mVUoHKyxW7bMumvi63mGU2kEtLA=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-latex.min.js"},"less":{"integrity":"sha256-KPVJREIAtbHDIVFzCC2CG/+kFJvS2QSvheijs7hzKyI=","requires":["css"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-less.min.js"},"lisp":{"integrity":"sha256-JF0oYD0ce6QwJwhkk2l2LpPW9/+nMUVKgyfQZwKgL7o=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-lisp.min.js"},"lua":{"integrity":"sha256-dtM544asCSWgnGEtFfy0Up/RZ1sIKPwIm1efm4DTF2g=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-lua.min.js"},"makefile":{"integrity":"sha256-pbm9rQGN4Ore8f63Nc0XohO/ndkqmaCkiM+t++tZS6s=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-makefile.min.js"},"markdown":{"integrity":"sha256-e4izlzFmEQlenZQnzkYK5oyxV5mX6lwVQjL6onkHiy0=","requires":["markup"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-markdown.min.js"},"markup":{"integrity":"sha256-8nT1E50WC5TDeb3+USsFEXN5ZGgLdmwZ6RS5KT71Wjs=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-markup.min.js"},"matlab":{"integrity":"sha256-Eii4kMdOE8ezFgaPuk3EEIx8XTzoFELWqTeSAzzFNzg=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-matlab.min.js"},"nasm":{"integrity":"sha256-q25WpTTIWYOfZSv8lthBMxjDdyxBgbpg8VkUbNvs0r0=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-nasm.min.js"},"objectivec":{"integrity":"sha256-PdzihI/De5LLXlXeap1/ii5CduyVtr8dJByxPw9mZfY=","requires":["c"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-objectivec.min.js"},"ocaml":{"integrity":"sha256-r93j2XbuUKMLy7BOj1rGro++GLf6G1q12Z80zlza6I0=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-ocaml.min.js"},"opencl":{"integrity":"sha256-fWZd1X/MgB03plUc1TS+3gPr+dX7VAJgUli3e/dSHPs=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-opencl.min.js"},"parigp":{"integrity":"sha256-o3zIbQfZLv4s9vvCxk053vJogsMpoyl/4kHUFUSeX2E=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-parigp.min.js"},"pascal":{"integrity":"sha256-+ZydA8Nld4ARjQ20Xg1GdqPITRR+O54ChikNpWbjNNQ=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-pascal.min.js"},"perl":{"integrity":"sha256-4UrzdEz2XhP7GUL8C3p5EvYqk+VX3N0GDZO01qhqSuc=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-perl.min.js"},"php":{"integrity":"sha256-gJj4RKQeXyXlVFu2I8jQACQZsii/YzVMhcDT99lr45I=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-php.min.js"},"plsql":{"integrity":"sha256-OsVeLk13RgKzb0xXIW8fXxmdfeOviRALmOdgOx6lwVk=","requires":["sql"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-plsql.min.js"},"powershell":{"integrity":"sha256-sADd0pgdCd3YpzQBaaIBhB/f3wEHjhUPQKZXVwAGxC8=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-powershell.min.js"},"processing":{"integrity":"sha256-+uj4GjS/1qvSEc6jTuFiDyfY+WoZEQqXDxR3/NPU1xA=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-processing.min.js"},"prolog":{"integrity":"sha256-kRo6aBwWmcA13drxjM/5J+lj1c9rBOPXbzZZ/RVzZVk=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-prolog.min.js"},"protobuf":{"integrity":"sha256-mbfGZEOjT4PX0OwC+Om2vTe8UsVDM2l8bnkFGCzC3CM=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-protobuf.min.js"},"python":{"integrity":"sha256-zXSwQE9cCZ8HHjjOoy6sDGyl5/3i2VFAxU8XxJWfhC0=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.min.js"},"r":{"integrity":"sha256-gL4dWWDK5a/PMVeldvL97FJDRISGr4d0n7B09bSZRhc=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.min.js"},"regex":{"integrity":"sha256-YyOLni8cJbmQXM1FG50N3JAVfuTltcZGJwEmCeueaKA=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-regex.min.js"},"ruby":{"integrity":"sha256-SGBXZakPP3Fv0P4U6jksuwZQU5FlC22ZAANstHSSp3k=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-ruby.min.js"},"rust":{"integrity":"sha256-iLvA6WoUo1szBgKU5uTNOyWYA+to/92tUFM9GkdFpfs=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-rust.min.js"},"sass":{"integrity":"sha256-3oigyyaPovKMS9Ktg4ahAD1R6fOSMGASuA03DT8IrvU=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sass.min.js"},"scala":{"integrity":"sha256-n7yE0wXXe/CGgSU2Lht6OSaAuPpX1SNhmaxDOUvxLZs=","requires":["java"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-scala.min.js"},"scheme":{"integrity":"sha256-wagePCH0Bf8H2NJL6NLvfAo/E28vBpfmaWHQmTwlPbs=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-scheme.min.js"},"scss":{"integrity":"sha256-e8D5SrALfYOcy2NqfpblBaRTuTlrmQUP6RUOYtQ+7cg=","requires":["css"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-scss.min.js"},"smalltalk":{"integrity":"sha256-tpLhvRyan+a4VJcIBS18K1amTQ+D6Mw6Q1kpOmra1tw=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-smalltalk.min.js"},"soy":{"integrity":"sha256-qUzL3S+AgXekMp0tB9fcM3+hcmilzf/HE1PWKSRFIEA=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-soy.min.js"},"sql":{"integrity":"sha256-zgHnuWPEbzVKrT72LUtMObJgbwkv0VESwRfz7jpdsq0=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sql.min.js"},"swift":{"integrity":"sha256-udcKTdu6vw1GzcaC0kwzPE/1zKYBbmjr0mY8A27Xb3g=","requires":["clike"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-swift.min.js"},"textile":{"integrity":"sha256-UMjpaRB1IUP+4VrYhWpZJVcGIFK9K06oxUz5EYcbzSY=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-textile.min.js"},"toml":{"integrity":"sha256-9MnngneIB3TwEPWioOI6snULEeN7wHLq2+einu+TvGE=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-toml.min.js"},"tsx":{"integrity":"sha256-Lu/zMuTtme4f+TbQrXMjj8OQwAb0x4RApaysYdeJBN0=","requires":["jsx"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-tsx.min.js"},"typescript":{"integrity":"sha256-4ZOSQ1LXG14Swa26SUt2L/IfrwVPjrsvQNLxQiIPi8U=","requires":["javascript"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-typescript.min.js"},"vbnet":{"integrity":"sha256-OWa6yCZT+20Xdho9LQYjDfwXaQQByFg1/MpPPQmJ7vM=","requires":["basic"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-vbnet.min.js"},"verilog":{"integrity":"sha256-EhZ68Nu/SZGYROzlrpDlaiUs3ByOHHiWTCTLkO0bkIw=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-verilog.min.js"},"vhdl":{"integrity":"sha256-DlOnP3cvuVRpTGGcymNNfTV+bf/uy433DNPyU3iP9Rg=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-vhdl.min.js"},"vim":{"integrity":"sha256-p+JJVLKpQLg+ugkH9NG9zBgEt4oq79ZJqyljl4/o6IY=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-vim.min.js"},"visual-basic":{"integrity":"sha256-V5pPeBgeL9OcMsfpcX8zt4nTZVWj17fQVvnS0KVO/hY=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-visual-basic.min.js"},"wasm":{"integrity":"sha256-2i14hUSVIGaulLSxLQ/yUt0zt+JCyA8UmHxh3EyY05E=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-wasm.min.js"},"wiki":{"integrity":"sha256-V14zvplc141S9y2zyDUqpj0ZoXobDwP/wYK91ALcAs8=","requires":["markup"],"src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-wiki.min.js"},"yaml":{"integrity":"sha256-JoqiKM2GipZjbGjNyl62d6qjQY1F9QTLriWOe4N76wE=","src":"https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-yaml.min.js"}},"preload":["c","java","markup","javascript","cpp","css"]}]};</script>
+    <script src="{% static 'paste/app.js' %}" nonce=3ra+TpXGQImBZW8NNdCJ2A== defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" nonce=Xu1vecKbRYKwChC4mB6t2Q== async defer></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'paste/app.css' %}" nonce=3ra+TpXGQImBZW8NNdCJ2A==/>
+  </head>
+  <body>
+      <div class="header-container">
+        <div class="header">
+          <span class="header-title">Paste-Tastic! &#128203;</span>
+          <span class="tag-line">The pretty paste solution!&trade;</span>
+        </div>
+      </div>
+      <div class="content-container">
+      <form id="form" action="/create" method="post">
+        {% csrf_token %}
+        <div class="field-container">
+          <label class="label-name" for="name">Name:</label>
+          <input class="input-name" name="name"></input>
+          <label class="label-language" for="lang">Language:</label>
+          <select class="language-select" id="lang" name="lang">
+            <option  value="actionscript">ActionScript</option>
+            <option  value="ada">Ada</option>
+            <option  value="applescript">AppleScript</option>
+            <option  value="arduino">Arduino</option>
+            <option  value="asm6502">6502 Assembly</option>
+            <option  value="aspnet">ASP.Net</option>
+            <option  value="bash">Bash</option>
+            <option  value="basic">Basic</option>
+            <option  value="bison">Bison</option>
+            <option  value="brainfuck">Brainfuck</option>
+            <option  value="c">C</option>
+            <option  value="cil">CIL</option>
+            <option  value="clojure">Clojure</option>
+            <option  value="cmake">CMake</option>
+            <option  value="coffeescript">CoffeeScript</option>
+            <option  value="cpp">C++</option>
+            <option  value="crystal">Crystal</option>
+            <option  value="csharp">C#</option>
+            <option  value="css">CSS</option>
+            <option  value="d">D</option>
+            <option  value="dart">Dart</option>
+            <option  value="diff">Diff (git)</option>
+            <option  value="erb">Embedded Ruby</option>
+            <option  value="erlang">Erlang</option>
+            <option  value="fortran">Fortran</option>
+            <option  value="fsharp">F#</option>
+            <option  value="git">git CLI</option>
+            <option  value="glsl">GLSL</option>
+            <option  value="go">Go</option>
+            <option  value="graphql">GraphQL</option>
+            <option  value="groovy">Groovy</option>
+            <option  value="haskell">Haskell</option>
+            <option  value="http">HTTP</option>
+            <option  value="java">Java</option>
+            <option  value="javadoc">Javadoc</option>
+            <option selected="selected" value="javascript">JavaScript</option>
+            <option  value="javastacktrace">Java Stack Trace</option>
+            <option  value="jsdoc">JSDoc</option>
+            <option  value="json">JSON</option>
+            <option  value="jsx">JSX</option>
+            <option  value="julia">Julia</option>
+            <option  value="kotlin">Kotlin</option>
+            <option  value="latex">LaTeX</option>
+            <option  value="less">Less</option>
+            <option  value="lisp">Lisp</option>
+            <option  value="lua">Lua</option>
+            <option  value="makefile">Makefile</option>
+            <option  value="markdown">Markdown</option>
+            <option  value="markup">HTML</option>
+            <option  value="markup">MathML</option>
+            <option  value="matlab">Matlab</option>
+            <option  value="nasm">NASM</option>
+            <option  value="objectivec">Objective-C</option>
+            <option  value="ocaml">OCaml</option>
+            <option  value="opencl">OpenCL</option>
+            <option  value="parigp">PARI/GP</option>
+            <option  value="pascal">Pascal</option>
+            <option  value="perl">Perl</option>
+            <option  value="php">PHP</option>
+            <option  value="plsql">PL/SQL</option>
+            <option  value="powershell">PowerShell</option>
+            <option  value="processing">Processing</option>
+            <option  value="prolog">Prolog</option>
+            <option  value="protobuf">Protobuf</option>
+            <option  value="python">Python</option>
+            <option  value="r">R</option>
+            <option  value="regex">RegExp</option>
+            <option  value="ruby">Ruby</option>
+            <option  value="rust">Rust</option>
+            <option  value="sass">Sass</option>
+            <option  value="scala">Scala</option>
+            <option  value="scheme">Scheme</option>
+            <option  value="scss">SCSS</option>
+            <option  value="smalltalk">Smalltalk</option>
+            <option  value="soy">Soy</option>
+            <option  value="sql">SQL</option>
+            <option  value="swift">Swift</option>
+            <option  value="markup">SVG</option>
+            <option  value="textile">Textile</option>
+            <option  value="toml">TOML</option>
+            <option  value="typescript">TypeScript</option>
+            <option  value="tsx">TypeScript JSX</option>
+            <option  value="vbnet">VB.Net</option>
+            <option  value="verilog">Verilog</option>
+            <option  value="vhdl">VHDL</option>
+            <option  value="vim">Vim</option>
+            <option  value="visual-basic">Visual Basic</option>
+            <option  value="wasm">Web Assembly</option>
+            <option  value="wiki">Wikitext</option>
+            <option  value="markup">XML</option>
+            <option  value="yaml">YAML</option>
+          </select>
+        </div>
+        <label class="label-editor" for="editor">Enter your new paste:</label>
+        <div class="editor">
+          <textarea id="editor" name="text" class="editor-textarea" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+          <div id="viewer" class="viewer"></div>
+        </div>
+        <input class="button" type="submit" value="✔ Submit" />
+      </form>
+      <div class="label-recent">Recently viewed:</div>
+      <ul id="recent-container"></ul>
+    </div>
+  </body>
+</html>

