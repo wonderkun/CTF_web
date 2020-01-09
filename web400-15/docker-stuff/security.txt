@@ -1,0 +1,5 @@
+Contact: https://hxp.io/contact/
+Encryption: lol
+Acknowledgments: https://2019.ctf.link/
+Preferred-Languages: en, de, pl
+Policy: please hack

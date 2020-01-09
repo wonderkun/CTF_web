@@ -1,0 +1,7 @@
+version: "3"
+services:
+    includer:
+        build: ./
+        ports: 
+            - "80:80"
+        
