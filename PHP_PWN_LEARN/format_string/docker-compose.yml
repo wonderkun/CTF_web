@@ -1,0 +1,17 @@
+version: '2.4'
+services:
+  pwn:
+    build:
+      context: ./
+      args:
+        PROXY: "socks5://172.17.0.1:1080"
+        BRANCH: "PHP-7.2"
+    privileged: true
+    # volumes:
+    #   - ./www:/var/www/html/
+    ports:
+      - "8887:80"
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
