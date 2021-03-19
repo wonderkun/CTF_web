@@ -1,5 +1,5 @@
 Flask-SQLAlchemy==2.3.2
-Jinja2==2.10
+Jinja2==2.11.3
 pycrypto==2.6.1
 six==1.11.0
 SQLAlchemy==1.2.10
