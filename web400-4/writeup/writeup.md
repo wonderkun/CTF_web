@@ -14,7 +14,7 @@ image=888%20ununionion%20selselectect%200x696e6465782e706870&image_download=%E6%
 
 所以思路是利用php的phar协议绕过,但是却没有文件上传路径,所以需要利用注入获取文件名.
 由于过滤了(),所以需要利用union盲注,来找文件名.
-具体怎么union盲注,参考这里[http://wonderkun.cc/index.html/?p=547](http://wonderkun.cc/index.html/?p=547)
+具体怎么union盲注,参考这里[https://wonderkun.cc/2017/02/26/基于union查询的盲注(感谢pcat牛不吝赐教)/](https://wonderkun.cc/2017/02/26/%E5%9F%BA%E4%BA%8Eunion%E6%9F%A5%E8%AF%A2%E7%9A%84%E7%9B%B2%E6%B3%A8(%E6%84%9F%E8%B0%A2pcat%E7%89%9B%E4%B8%8D%E5%90%9D%E8%B5%90%E6%95%99)/)
 
 提供一个python的exp
 ```python
